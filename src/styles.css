@@ -1,1 +1,159 @@
-/* You can add global styles to this file, and also import other style files */
+.header-custom {
+    margin: 10px;
+    height: 50px;
+    top: 15px;
+    text-align: left;
+    font-size: medium;
+    width: 400px;
+}
+
+.header-custom-no-left-margin {
+  margin: 10px;
+  padding-left: 0px;
+    height: 50px;
+    top: 15px;
+    text-align: left;
+    font-size: medium;
+    width: 400px;
+}
+
+.section-pane {
+    padding: 0px;
+}
+
+.custom-row-pad {
+    padding: 10px;
+}
+
+.custom-table-header {
+    color: #FFFFFF;
+}
+
+.table-scroll-container {
+  max-height: 200px; /* Set the desired height for the scrollable area */
+  min-height: 200px;
+  overflow-y: auto; /* Enable vertical scrolling */
+  /* Ensures the container is the nearest scrolling ancestor for sticky positioning */
+  position: relative; 
+}
+
+.table-scroll-container thead th {
+  position: sticky;
+  top: 0; /* Fixes the header at the top of the container */
+  background-color: blue; /* Add a background to prevent content from showing through */
+  /* Ensure borders and alignment are consistent */
+  height: 30px;
+  color: white;
+  border-collapse: collapse; 
+  z-index: 10; /* Ensures the header stays on top of the body content */
+}
+
+.pane-bg-color {
+  background-color: lightskyblue;
+  padding-left: 0%;
+  border: 1px;
+  border-color: blue;
+}
+.s2p-accordian-bg-color {
+   background-color: blue;
+   height: 20px;
+   align-content: center;
+}
+.s2p-accordian-text-color{
+  color: #fff;
+}
+.my-custom-select {
+  background-color: wheat;
+  color: #333;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  height: 20px;
+  /* Other styles you want to apply to the closed select box */
+}
+
+
+/* Container styles to establish positioning context */
+.info-container {
+    position: relative; /* Essential for positioning the info box relative to this container */
+    display: inline-block; /* Keeps the container size specific to its content */
+    cursor: pointer; /* Changes the cursor to a hand icon on hover */
+}
+
+/* Icon styles (adjust size and color as needed) */
+.icon-box {
+    font-size: 24px;
+    color: #007bff;
+}
+
+
+/* Info box text styles */
+.info-box-text {
+    visibility: hidden; /* Hide the info box by default */
+    width: 160px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    border-radius: 5px;
+    position: absolute; /* Position the box absolutely */
+    z-index: 1; /* Ensure it appears above other elements */
+    bottom: 125%; /* Position above the icon */
+    left: 50%;
+    margin-left: -80px; /* Center the box (half of the width) */
+    opacity: 0; /* Use opacity for a fade effect */
+    transition: opacity 0.3s; /* Smooth transition */
+}
+
+/* Show the info box when the container is hovered */
+.info-container:hover .info-box-text {
+    visibility: visible; /* Make it visible */
+    opacity: 1; /* Fade in */
+}
+
+.inline-elements label, 
+.inline-elements .input-div {
+  display: inline-block;
+  /* Optional: Aligns items vertically */
+  vertical-align: middle; 
+}
+
+.inline-elements .input-div {
+  margin-left: 10px;
+}
+.custom-color-mat-icon {
+  background-color: skyblue;
+  color:  #425df5;
+}
+
+.table-bg-color {
+   background-color: whitesmoke
+}
+
+input[type="radio"] {
+  width: 20px;
+  height: 20px;
+  background-color: red
+}
+
+
+input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+ 
+}
+
+.s2p-toast-message {
+  display: flex;
+}
+/* Below is bootstrap syle. Overwiting the below property */
+.modal-backdrop {
+    z-index: -1;
+}
+
+
+.required-label::after{
+  content: "*";
+  color: red;
+  font-size: 1.0em;
+  margin-left: 4px; /* Optional: adds a little space */
+}

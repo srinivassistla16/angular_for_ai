@@ -1,0 +1,78 @@
+.header,
+.footer {
+  left: 0px;
+  flex: none;
+  background-color: #425df5;
+  height: 60px;
+  overflow: hidden;
+  position: sticky;
+}
+
+.logo_style {
+  color: #fff;
+  height: 50px;
+  font-size: 20px;
+  font-weight: 600;
+  margin-top: 15px;
+}
+
+.name-container {
+   display: flex;
+    margin-top: 10px;
+    justify-content: flex-end; 
+    padding-right: 40px;
+   
+}
+
+.full_name_style {
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  margin-top: 10px;
+ 
+}
+.logout-btn {
+  display: block;
+  background:blue;
+  color: white;
+  border: none;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 30px;
+  cursor: pointer;
+  padding: 0.5em 1.2em;
+}
+.logout-btn-wrapper {
+   padding-left: 10px;
+}
+
+.dropdown {
+  padding: 10px 20px;
+  background-color: #425df5;
+}
+
+/* Profile Circle Style */
+.profile-circle {
+  width: 35px;
+  height: 35px;
+  background-color: #ffffff;
+  color: #2c599d;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.dropdown-toggle::after {
+  margin-left: 10px;
+  color: white;
+  vertical-align: middle;
+}
+
+/*
+.rounded-circle {
+  object-fit: cover;
+  border: 1px solid #c1e6e6
+} */
+

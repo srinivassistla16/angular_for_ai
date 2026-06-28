@@ -35,7 +35,17 @@
               }
             ],
             "styles": [
-              "src/styles.css"
+              "node_modules/boxicons/css/boxicons.min.css",
+              "@angular/material/prebuilt-themes/azure-blue.css",
+              "node_modules/material-design-icons/iconfont/material-icons.css",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "src/styles.css",
+              "node_modules/ngx-toastr/toastr.css"
+            ],
+            "scripts": [
+              "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/bootstrap/dist/js/bootstrap.min.js",
+              "node_modules/file-saver/dist/FileSaver.min.js"
             ]
           },
           "configurations": {
@@ -43,13 +53,13 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kB",
-                  "maximumError": "1MB"
+                  "maximumWarning": "2MB",
+                  "maximumError": "5MB"
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "4kB",
-                  "maximumError": "8kB"
+                  "maximumWarning": "20kB",
+                  "maximumError": "20kB"
                 }
               ],
               "outputHashing": "all"

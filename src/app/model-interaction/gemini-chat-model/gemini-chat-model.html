@@ -1,0 +1,45 @@
+<div class="container-fluid pane-bg-color">
+    <form [formGroup]="queryForm">
+        <div class="row custom-row-pad">
+            <div class="col-md-2 inline-elements">
+                <div class="icon-container input-div">
+                    <mat-icon class="custom-color-mat-icon" matTooltip="query" matTooltipPosition="right"
+                        aria-label="Information icon">info</mat-icon>
+                </div>
+                <label for="query">Query:</label>
+            </div>
+            <div class="col-md-10">
+                <textarea id="query" formControlName="query" rows="4" cols="50" class="form-control border border-dark"
+                    [class.is-invalid]="queryForm.controls['query']?.invalid && queryForm.controls['query']?.touched"></textarea>
+                <small [class.d-none]="queryForm.controls['query']?.valid || queryForm.controls['query']?.untouched"
+                    class="text-danger">Mandatory</small>
+            </div>
+        </div>
+    </form>
+    <div class="row custom-row-pad">
+        <div class="col-md-2 offset-md-10">
+            <button type="button" class="btn btn-primary" [disabled]="queryForm.invalid" (click)="doSubmitQuery()">
+                Submit Query
+            </button>
+        </div>
+    </div>
+    <form [formGroup]="responseForm">
+        <div class="row custom-row-pad">
+            <div class="col-md-2 inline-elements">
+                <div class="icon-container input-div">
+                    <mat-icon class="custom-color-mat-icon" matTooltip="Response" matTooltipPosition="right"
+                        aria-label="Information icon">info</mat-icon>
+                </div>
+                <label for="response">Response:</label>
+            </div>
+
+            <div class="col-md-10">
+                <textarea id="response" formControlName="response" rows="8" cols="50"
+                    class="form-control border border-dark"
+                    [class.is-invalid]="responseForm.controls['response']?.invalid && responseForm.controls['response']?.touched"></textarea>
+
+            </div>
+        </div>
+    </form>
+
+</div>
