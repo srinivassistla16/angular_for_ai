@@ -1,3 +1,3 @@
 export class SimpleQuery {
-    constructor(public query_str: string) {}
+    constructor(public query_str: string | null) {}
 }

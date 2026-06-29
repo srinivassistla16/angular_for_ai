@@ -11,6 +11,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { OpenaiChatModel } from './openai-chat-model/openai-chat-model';
 import { GeminiChatModel } from './gemini-chat-model/gemini-chat-model';
 import { HfChatModel } from './hf-chat-model/hf-chat-model';
+import { CommonChatModel } from './common-chat-model/common-chat-model';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { HfChatModel } from './hf-chat-model/hf-chat-model';
     ModelTabs,
     OpenaiChatModel,
     GeminiChatModel,
-    HfChatModel
+    HfChatModel,
+    CommonChatModel
   ],
   imports: [
     CommonModule,
