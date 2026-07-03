@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { HfChatModel } from './hf-chat-model';
+import { CommonPromptCalls } from './common-prompt-calls';
 
-describe('HfChatModel', () => {
-  let component: HfChatModel;
-  let fixture: ComponentFixture<HfChatModel>;
+describe('CommonPromptCalls', () => {
+  let component: CommonPromptCalls;
+  let fixture: ComponentFixture<CommonPromptCalls>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [HfChatModel]
+      declarations: [CommonPromptCalls]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(HfChatModel);
+    fixture = TestBed.createComponent(CommonPromptCalls);
     component = fixture.componentInstance;
     await fixture.whenStable();
   });

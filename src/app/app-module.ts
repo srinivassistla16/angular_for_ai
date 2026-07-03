@@ -6,6 +6,9 @@ import { App } from './app';
 import { Header } from './header/header';
 import { ModelInteractionModule } from './model-interaction/model-interaction-module';
 import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import { EmbeddingModelsModule } from './embedding-models/embedding-models-module';
+import { ChatbotModule } from './chatbot/chatbot-module';
+import { DynamicPromptsModule } from './dynamic-prompts/dynamic-prompts-module';
 
 @NgModule({
   declarations: [
@@ -15,7 +18,10 @@ import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http'
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ModelInteractionModule
+    ModelInteractionModule,
+    EmbeddingModelsModule,
+    DynamicPromptsModule,
+    ChatbotModule
   ],
   providers: [
     provideBrowserGlobalErrorListeners(),

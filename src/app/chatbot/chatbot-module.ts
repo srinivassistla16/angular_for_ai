@@ -1,20 +1,22 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
-import { ModelMain } from './model-main/model-main';
-import { ModelTabs } from './model-tabs/model-tabs';
-import { AppRoutingModule } from '../app-routing-module';
 import { RouterModule, Routes } from '@angular/router';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatIconModule } from '@angular/material/icon';
-import { CommonChatModel } from './common-chat-model/common-chat-model';
+import { AppRoutingModule } from '../app-routing-module';
+
+import { ChatbotMain } from './chatbot-main/chatbot-main';
+import { CommonChatbot } from './common-chatbot/common-chatbot';
+import { ChatbotTabs } from './chatbot-tabs/chatbot-tabs';
+
+
 
 @NgModule({
   declarations: [
-    ModelMain,
-    ModelTabs,
-    CommonChatModel
+    ChatbotMain,
+    CommonChatbot,
+    ChatbotTabs
   ],
   imports: [
     CommonModule,
@@ -26,4 +28,4 @@ import { CommonChatModel } from './common-chat-model/common-chat-model';
     FormsModule
   ]
 })
-export class ModelInteractionModule { }
+export class ChatbotModule { }

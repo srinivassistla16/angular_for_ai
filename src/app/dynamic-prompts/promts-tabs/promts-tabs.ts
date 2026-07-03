@@ -2,13 +2,13 @@ import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
-  selector: 'app-model-tabs',
+  selector: 'app-promts-tabs',
   standalone: false,
-  templateUrl: './model-tabs.html',
-  styleUrl: './model-tabs.css',
+  templateUrl: './promts-tabs.html',
+  styleUrl: './promts-tabs.css',
 })
-export class ModelTabs {
-
+export class PromtsTabs {
+  
   constructor(private router: Router, private route: ActivatedRoute) { }
 
   isOpenAiActive = false;
@@ -22,7 +22,7 @@ export class ModelTabs {
       this.isGeminiActive = false;
       this.isHfActive = false;
       this.headerSubText = "- Open AI",
-      this.router.navigate(['/models-main/common', 'openai'], { relativeTo: this.route });
+      this.router.navigate(['/prompts-main/common-prompt','openai'], { relativeTo: this.route});
     }
   }
 
@@ -31,8 +31,9 @@ export class ModelTabs {
       this.isOpenAiActive = false;
       this.isHfActive = false;
       this.isGeminiActive = true;
-      this.headerSubText = "- Gemini",
-        this.router.navigate(['/models-main/common', 'gemini'], { relativeTo: this.route });
+      this.headerSubText = "- Google",
+      this.router.navigate(['/prompts-main/common-prompt','google'], { relativeTo: this.route});
+      
     }
   }
 
@@ -42,9 +43,8 @@ export class ModelTabs {
       this.isHfActive = true;
       this.isGeminiActive = false;
       this.headerSubText = "- Hugging Face",
-         this.router.navigate(['/models-main/common', 'huggingface'], { relativeTo: this.route });
+      this.router.navigate(['/prompts-main/common-prompt','huggingface'], { relativeTo: this.route});
     }
   }
-
 
 }

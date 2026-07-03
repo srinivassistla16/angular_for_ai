@@ -1,20 +1,21 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
-import { ModelMain } from './model-main/model-main';
-import { ModelTabs } from './model-tabs/model-tabs';
-import { AppRoutingModule } from '../app-routing-module';
+import { EmbeddingsMain } from './embeddings-main/embeddings-main';
+import { EmbeddingsTabs } from './embeddings-tabs/embeddings-tabs';
 import { RouterModule, Routes } from '@angular/router';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatIconModule } from '@angular/material/icon';
-import { CommonChatModel } from './common-chat-model/common-chat-model';
+import { AppRoutingModule } from '../app-routing-module';
+import { CommonEmbeddingModel } from './common-embedding-model/common-embedding-model';
+
+
 
 @NgModule({
   declarations: [
-    ModelMain,
-    ModelTabs,
-    CommonChatModel
+    EmbeddingsMain,
+    EmbeddingsTabs,
+    CommonEmbeddingModel
   ],
   imports: [
     CommonModule,
@@ -26,4 +27,4 @@ import { CommonChatModel } from './common-chat-model/common-chat-model';
     FormsModule
   ]
 })
-export class ModelInteractionModule { }
+export class EmbeddingModelsModule { }

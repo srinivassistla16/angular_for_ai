@@ -1,20 +1,21 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
-import { ModelMain } from './model-main/model-main';
-import { ModelTabs } from './model-tabs/model-tabs';
+import { PromtsMain } from './promts-main/promts-main';
+import { PromtsTabs } from './promts-tabs/promts-tabs';
+import { CommonPromptCalls } from './common-prompt-calls/common-prompt-calls';
 import { AppRoutingModule } from '../app-routing-module';
-import { RouterModule, Routes } from '@angular/router';
+import { RouterModule } from '@angular/router';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatIconModule } from '@angular/material/icon';
-import { CommonChatModel } from './common-chat-model/common-chat-model';
+
+
 
 @NgModule({
   declarations: [
-    ModelMain,
-    ModelTabs,
-    CommonChatModel
+    PromtsMain,
+    PromtsTabs,
+    CommonPromptCalls
   ],
   imports: [
     CommonModule,
@@ -26,4 +27,4 @@ import { CommonChatModel } from './common-chat-model/common-chat-model';
     FormsModule
   ]
 })
-export class ModelInteractionModule { }
+export class DynamicPromptsModule { }

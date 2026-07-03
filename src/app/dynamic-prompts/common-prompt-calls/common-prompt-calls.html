@@ -1,0 +1,77 @@
+<div class="container-fluid pane-bg-color">
+    <form [formGroup]="dynamicPromptForm">
+        <div class="row custom-row-pad">
+            <div class="col-md-2 inline-elements">
+                <div class="icon-container input-div">
+                    <mat-icon class="custom-color-mat-icon" matTooltip="Mythology" matTooltipPosition="right"
+                        aria-label="Information icon">info</mat-icon>
+                </div>
+                <label for="mythology">Mythology:</label>
+            </div>
+            <div class="col-md-2">
+                <select formControlName="mythology" class="form-select">
+                    <option value="" class="my-custom-select">Select One</option>
+                    <option value="ramayan" class="my-custom-select">Ramayan</option>
+                    <option value="mahabharat" class="my-custom-select">Maha Bharat</option>
+                    <option value="bhagavatam" class="my-custom-select">Bhagavatham</option>
+                </select>
+            </div>
+            <div class="col-md-2 inline-elements">
+                <div class="icon-container input-div">
+                    <mat-icon class="custom-color-mat-icon" matTooltip="Character" matTooltipPosition="right"
+                        aria-label="Information icon">info</mat-icon>
+                </div>
+                <label for="mythology">Character:</label>
+            </div>
+            <div class="col-md-2">
+                <select formControlName="character" class="form-select">
+                    <option value="" class="my-custom-select">Select One</option>
+                    <option value="duryodhan" class="my-custom-select">Duryodhan</option>
+                    <option value="sakuni" class="my-custom-select">Sakuni</option>
+                    <option value="lakshmana" class="my-custom-select">Lakshmana</option>
+                    <option value="satyabhama" class="my-custom-select">Satya Bhama</option>
+                </select>
+            </div>
+            <div class="col-md-2 inline-elements">
+                <div class="icon-container input-div">
+                    <mat-icon class="custom-color-mat-icon" matTooltip="Character" matTooltipPosition="right"
+                        aria-label="Information icon">info</mat-icon>
+                </div>
+                <label for="noOfLines">No of Lines:</label>
+            </div>
+            <div class="col-md-2">
+                <select formControlName="noOfLines" class="form-select">
+                    <option value="" class="my-custom-select">No. of Lines</option>
+                    <option value="1" class="my-custom-select">One</option>
+                    <option value="2" class="my-custom-select">Two</option>
+                    <option value="3" class="my-custom-select">Three</option>
+                    <option value="4" class="my-custom-select">Four</option>
+                </select>
+            </div>
+        </div>
+    </form>
+    <div class="row custom-row-pad">
+        <div class="col-md-2 offset-md-10">
+            <button type="button" class="btn btn-primary" [disabled]="dynamicPromptForm.invalid" (click)="doSubmitPrompt()">
+                Generate
+            </button>
+        </div>
+    </div>
+   <form [formGroup]="responseForm">
+        <div class="row custom-row-pad">
+            <div class="col-md-2 inline-elements">
+                <div class="icon-container input-div">
+                    <mat-icon class="custom-color-mat-icon" matTooltip="Prompt Response" matTooltipPosition="right"
+                        aria-label="Information icon">info</mat-icon>
+                </div>
+                <label for="response">Response:</label>
+            </div>
+
+            <div class="col-md-10">
+                <textarea id="response" formControlName="response" rows="8" cols="50"
+                    class="form-control border border-dark"
+                    [class.is-invalid]="responseForm.controls['response']?.invalid && responseForm.controls['response']?.touched"></textarea>
+            </div>
+        </div>
+    </form>
+</div>

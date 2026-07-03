@@ -1,0 +1,202 @@
+<div class="container-fluid pane-bg-color">
+    <div class="row custom-row-pad">
+        <div style="display: flex; justify-content: center; align-items: center; border: 1px solid black;">
+            <h6>Type 1: Simple One Line Vector Embedding</h6>
+        </div>
+    </div>
+    <form [formGroup]="queryForm">
+        <div class="row custom-row-pad">
+            <div class="col-md-3 inline-elements">
+                <div class="icon-container input-div">
+                    <mat-icon class="custom-color-mat-icon" matTooltip="Statement for Embeddding"
+                        matTooltipPosition="right" aria-label="Information icon">info</mat-icon>
+                </div>
+                <label for="query">Statement:</label>
+            </div>
+            <div class="col-md-9">
+                <input type="text" formControlName="query" class="form-control border border-dark"
+                    [class.is-invalid]="queryForm.controls['query']?.invalid && queryForm.controls['query']?.touched">
+                <small [class.d-none]="queryForm.controls['query']?.valid || queryForm.controls['query']?.untouched"
+                    class="text-danger">Mandatory</small>
+            </div>
+        </div>
+    </form>
+    <div class="row custom-row-pad">
+        <div class="col-md-3 offset-md-9">
+            <button type="button" class="btn btn-primary" [disabled]="queryForm.invalid" (click)="doSubmitQuery()">
+                Convert
+            </button>
+        </div>
+    </div>
+    <form [formGroup]="responseForm">
+        <div class="row custom-row-pad">
+            <div class="col-md-3 inline-elements">
+                <div class="icon-container input-div">
+                    <mat-icon class="custom-color-mat-icon" matTooltip="Vector Embedding" matTooltipPosition="right"
+                        aria-label="Information icon">info</mat-icon>
+                </div>
+                <label for="response">Embedding:</label>
+            </div>
+
+            <div class="col-md-9">
+                <textarea id="response" formControlName="response" rows="8" cols="50"
+                    class="form-control border border-dark"
+                    [class.is-invalid]="responseForm.controls['response']?.invalid && responseForm.controls['response']?.touched"></textarea>
+
+            </div>
+        </div>
+    </form>
+    <div class="row custom-row-pad">
+        <div style="display: flex; justify-content: center; align-items: center; border: 1px solid black;">
+            <h6>Type 2: Multiple Documents Vector Embedding</h6>
+        </div>
+    </div>
+        <form [formGroup]="multiDocForm">
+        <div class="row custom-row-pad">
+            <div class="col-md-3 inline-elements">
+                <div class="icon-container input-div">
+                    <mat-icon class="custom-color-mat-icon" matTooltip="Document for Embeddding"
+                        matTooltipPosition="right" aria-label="Information icon">info</mat-icon>
+                </div>
+                <label for="query">Document 1:</label>
+            </div>
+            <div class="col-md-9">
+                <input type="text" formControlName="doc1" class="form-control border border-dark"
+                    [class.is-invalid]="multiDocForm.controls['doc1']?.invalid && multiDocForm.controls['doc1']?.touched">
+                <small [class.d-none]="multiDocForm.controls['doc1']?.valid || multiDocForm.controls['doc1']?.untouched"
+                    class="text-danger">Mandatory</small>
+            </div>
+        </div>
+        <div class="row custom-row-pad">
+            <div class="col-md-3 inline-elements">
+                <div class="icon-container input-div">
+                    <mat-icon class="custom-color-mat-icon" matTooltip="Document for Embeddding"
+                        matTooltipPosition="right" aria-label="Information icon">info</mat-icon>
+                </div>
+                <label for="query">Document 2:</label>
+            </div>
+            <div class="col-md-9">
+                <input type="text" formControlName="doc2" class="form-control border border-dark"
+                    [class.is-invalid]="multiDocForm.controls['doc2']?.invalid && multiDocForm.controls['doc2']?.touched">
+                <small [class.d-none]="multiDocForm.controls['doc2']?.valid || multiDocForm.controls['doc2']?.untouched"
+                    class="text-danger">Mandatory</small>
+            </div>
+        </div>
+        <div class="row custom-row-pad">
+            <div class="col-md-3 inline-elements">
+                <div class="icon-container input-div">
+                    <mat-icon class="custom-color-mat-icon" matTooltip="Document for Embeddding"
+                        matTooltipPosition="right" aria-label="Information icon">info</mat-icon>
+                </div>
+                <label for="query">Document 3:</label>
+            </div>
+            <div class="col-md-9">
+                <input type="text" formControlName="doc3" class="form-control border border-dark"
+                    [class.is-invalid]="multiDocForm.controls['doc3']?.invalid && multiDocForm.controls['doc3']?.touched">
+                <small [class.d-none]="multiDocForm.controls['doc3']?.valid || multiDocForm.controls['doc3']?.untouched"
+                    class="text-danger">Mandatory</small>
+            </div>
+        </div>
+        <div class="row custom-row-pad">
+            <div class="col-md-3 inline-elements">
+                <div class="icon-container input-div">
+                    <mat-icon class="custom-color-mat-icon" matTooltip="Document for Embeddding"
+                        matTooltipPosition="right" aria-label="Information icon">info</mat-icon>
+                </div>
+                <label for="query">Document 4:</label>
+            </div>
+            <div class="col-md-9">
+                <input type="text" formControlName="doc4" class="form-control border border-dark"
+                    [class.is-invalid]="multiDocForm.controls['doc4']?.invalid && multiDocForm.controls['doc4']?.touched">
+                <small [class.d-none]="multiDocForm.controls['doc4']?.valid || multiDocForm.controls['doc4']?.untouched"
+                    class="text-danger">Mandatory</small>
+            </div>
+        </div>
+    </form>
+    <div class="row custom-row-pad">
+        <div class="col-md-3 offset-md-9">
+            <button type="button" class="btn btn-primary" [disabled]="multiDocForm.invalid" (click)="doSubmitDocs()">
+                Convert Docs
+            </button>
+        </div>
+    </div>
+    <form [formGroup]="embedmentResponseForm">
+        <div class="row custom-row-pad">
+            <div class="col-md-3 inline-elements">
+                <div class="icon-container input-div">
+                    <mat-icon class="custom-color-mat-icon" matTooltip="Vector Embedding" matTooltipPosition="right"
+                        aria-label="Information icon">info</mat-icon>
+                </div>
+                <label for="response">Embedding:</label>
+            </div>
+
+            <div class="col-md-9">
+                <textarea id="embedment" formControlName="embedment" rows="8" cols="50"
+                    class="form-control border border-dark"
+                    [class.is-invalid]="embedmentResponseForm.controls['embedment']?.invalid && embedmentResponseForm.controls['embedment']?.touched"></textarea>
+
+            </div>
+        </div>
+    </form>
+    <div class="row custom-row-pad">
+        <div style="display: flex; justify-content: center; align-items: center; border: 1px solid black;">
+            <h6>Section 3: Documents Similary (using Cosine Function)</h6>
+        </div>
+    </div>
+    <form [formGroup]="similarityForm">
+        <div class="row custom-row-pad">
+            <div class="col-md-3 inline-elements">
+                <div class="icon-container input-div">
+                    <mat-icon class="custom-color-mat-icon" matTooltip="Sentence for Similarity"
+                        matTooltipPosition="right" aria-label="Information icon">info</mat-icon>
+                </div>
+                <label for="query">Sentence:</label>
+            </div>
+            <div class="col-md-9">
+                <input type="text" formControlName="sentence" class="form-control border border-dark"
+                    [class.is-invalid]="similarityForm.controls['sentence']?.invalid && similarityForm.controls['sentence']?.touched">
+                <small [class.d-none]="similarityForm.controls['sentence']?.valid || similarityForm.controls['sentence']?.untouched"
+                    class="text-danger">Mandatory</small>
+            </div>
+        </div>
+    </form>
+    <div class="row custom-row-pad">
+        <div class="col-md-3 offset-md-9">
+            <button type="button" class="btn btn-primary" [disabled]="similarityForm.invalid" (click)="getCosines()">
+                Cosine Values
+            </button>
+        </div>
+    </div>
+    <form [formGroup]="similarityResponseForm">
+        <div class="row custom-row-pad">
+            <div class="col-md-3 inline-elements">
+                <div class="icon-container input-div">
+                    <mat-icon class="custom-color-mat-icon" matTooltip="Cosine Similarity"
+                        matTooltipPosition="right" aria-label="Information icon">info</mat-icon>
+                </div>
+                <label for="query">Cos Similarity:</label>
+            </div>
+            <div class="col-md-9">
+                <input type="text" formControlName="similarity" class="form-control border border-dark"
+                    [class.is-invalid]="similarityResponseForm.controls['similarity']?.invalid && similarityResponseForm.controls['similarity']?.touched">
+                <small [class.d-none]="similarityResponseForm.controls['similarity']?.valid || similarityResponseForm.controls['similarity']?.untouched"
+                    class="text-danger">Mandatory</small>
+            </div>
+        </div>
+        <div class="row custom-row-pad">
+            <div class="col-md-3 inline-elements">
+                <div class="icon-container input-div">
+                    <mat-icon class="custom-color-mat-icon" matTooltip="Matching Document"
+                        matTooltipPosition="right" aria-label="Information icon">info</mat-icon>
+                </div>
+                <label for="query">Matching Doc:</label>
+            </div>
+            <div class="col-md-9">
+                <input type="text" formControlName="matchingdoc" class="form-control border border-dark"
+                    [class.is-invalid]="similarityResponseForm.controls['matchingdoc']?.invalid && similarityResponseForm.controls['matchingdoc']?.touched">
+                <small [class.d-none]="similarityResponseForm.controls['matchingdoc']?.valid || similarityResponseForm.controls['matchingdoc']?.untouched"
+                    class="text-danger">Mandatory</small>
+            </div>
+        </div>
+    </form>
+</div>

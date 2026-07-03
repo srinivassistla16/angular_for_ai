@@ -6,7 +6,7 @@ import { Observable, of } from 'rxjs';
   selector: 'app-header',
   standalone: false,
   templateUrl: './header.html',
-  styleUrl: './header.css',
+  styleUrls: ['./header.css'],
 })
 export class Header {
 

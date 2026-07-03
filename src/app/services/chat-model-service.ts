@@ -12,18 +12,9 @@ export class ChatModelService {
   private apiUrl = '/api';
   constructor(private http: HttpClient) { }
 
-  doQuery(modelType:string ,simpleQuery: SimpleQuery): Observable<any> {
+  doQuery(modelType:string | null ,simpleQuery: SimpleQuery): Observable<any> {
     return this.http.post<any>(this.apiUrl + "/models/"+modelType+"/simplequery", simpleQuery);
   }
 
-  /*
-  doOpenaiQuery(simpleQuery: SimpleQuery): Observable<any> {
-    return this.http.post<any>(this.apiUrl + "/models/openai/simplequery", simpleQuery);
-  }
-
-  doHuggingfaceQuery(simpleQuery: SimpleQuery): Observable<any> {
-    return this.http.post<any>(this.apiUrl + "/models/huggingface/simplequery", simpleQuery);
-  }
-    */
   
 }

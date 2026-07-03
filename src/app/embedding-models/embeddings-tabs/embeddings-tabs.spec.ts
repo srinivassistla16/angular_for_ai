@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { GeminiChatModel } from './gemini-chat-model';
+import { EmbeddingsTabs } from './embeddings-tabs';
 
-describe('GeminiChatModel', () => {
-  let component: GeminiChatModel;
-  let fixture: ComponentFixture<GeminiChatModel>;
+describe('EmbeddingsTabs', () => {
+  let component: EmbeddingsTabs;
+  let fixture: ComponentFixture<EmbeddingsTabs>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [GeminiChatModel]
+      declarations: [EmbeddingsTabs]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(GeminiChatModel);
+    fixture = TestBed.createComponent(EmbeddingsTabs);
     component = fixture.componentInstance;
     await fixture.whenStable();
   });

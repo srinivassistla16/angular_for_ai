@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { OpenaiChatModel } from './openai-chat-model';
+import { PromtsTabs } from './promts-tabs';
 
-describe('OpenaiChatModel', () => {
-  let component: OpenaiChatModel;
-  let fixture: ComponentFixture<OpenaiChatModel>;
+describe('PromtsTabs', () => {
+  let component: PromtsTabs;
+  let fixture: ComponentFixture<PromtsTabs>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [OpenaiChatModel]
+      declarations: [PromtsTabs]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(OpenaiChatModel);
+    fixture = TestBed.createComponent(PromtsTabs);
     component = fixture.componentInstance;
     await fixture.whenStable();
   });
