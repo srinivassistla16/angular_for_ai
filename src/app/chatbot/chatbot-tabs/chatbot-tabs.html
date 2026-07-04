@@ -9,7 +9,7 @@
 
             <div class="header-custom-no-left-margin">
                 <button (click)="navigateToOpenAi()"
-                    [ngClass]="isOpenAiActive? 'btn btn-secondary' : 'btn btn-primary'">
+                    [ngClass]="isOpenAiActive? 'btn btn-secondary' : 'btn btn-primary'" [disabled]="true">
                     Open AI
                 </button>
             </div>
@@ -25,7 +25,7 @@
         <div class="col-md-2">
             <div class="header-custom-no-left-margin">
                 <button (click)="navigateToHf()"
-                    [ngClass]="isHfActive? 'btn btn-secondary' : 'btn btn-primary'">
+                    [ngClass]="isHfActive? 'btn btn-secondary' : 'btn btn-primary'" [disabled]="true" >
                     Higging Face
                 </button>
             </div>
