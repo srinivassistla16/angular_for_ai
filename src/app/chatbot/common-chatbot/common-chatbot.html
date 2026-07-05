@@ -1,1 +1,49 @@
-<p>common-chatbot works!</p>
+<div class="chatbot-container">
+  <div class="chatbot-header">
+    <div class="header-info">
+      <div class="status-indicator online"></div>
+      <div class="model-details">
+        <h2>{{ modelName | titlecase }}</h2>
+        <span class="status-text">Online</span>
+      </div>
+    </div>
+    <div class="header-actions">
+      <button class="action-btn" title="Options">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="1"></circle><circle cx="12" cy="5" r="1"></circle><circle cx="12" cy="19" r="1"></circle></svg>
+      </button>
+    </div>
+  </div>
+
+  <div class="chatbot-messages" #scrollMe>
+    <div class="message-wrapper" *ngFor="let msg of messages" [ngClass]="{'user': msg.sender === 'user', 'bot': msg.sender === 'bot'}">
+      <div class="avatar" *ngIf="msg.sender === 'bot'">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8V4H8"></path><rect x="4" y="8" width="16" height="12" rx="2"></rect><path d="M2 14h2"></path><path d="M20 14h2"></path><path d="M15 13v2"></path><path d="M9 13v2"></path></svg>
+      </div>
+      <div class="message-content">
+        <div class="bubble">
+          {{ msg.text }}
+        </div>
+        <div class="time">{{ msg.timestamp | date:'shortTime' }}</div>
+      </div>
+    </div>
+    
+    <!-- Typing Indicator -->
+    <div class="message-wrapper bot typing" *ngIf="isTyping">
+      <div class="avatar">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8V4H8"></path><rect x="4" y="8" width="16" height="12" rx="2"></rect><path d="M2 14h2"></path><path d="M20 14h2"></path><path d="M15 13v2"></path><path d="M9 13v2"></path></svg>
+      </div>
+      <div class="message-content">
+        <div class="bubble">
+          <div class="dot-typing"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="chatbot-input">
+    <input type="text" #chatInput placeholder="Type your message..." (keyup.enter)="sendMessage(chatInput)" (input)="$event" />
+    <button class="send-btn" (click)="sendMessage(chatInput)" [disabled]="!chatInput.value.trim()">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+    </button>
+  </div>
+</div>
