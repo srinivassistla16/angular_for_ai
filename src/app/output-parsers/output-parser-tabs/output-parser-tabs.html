@@ -1,0 +1,43 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h4>Output Parsers {{headerSubText}}</h4>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3">
+            <div class="header-custom-no-left-margin">
+                <button (click)="navigateToStrOutputParser()"
+                    [ngClass]="isStrOutputParserActive? 'btn btn-secondary' : 'btn btn-primary'">
+                    StrOutputParser
+                </button>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="header-custom-no-left-margin">
+                <button (click)="navigateToJsonOutputParser()"
+                    [ngClass]="isJsonOutputParserActive? 'btn btn-secondary' : 'btn btn-primary'">
+                    JsonOutputParser
+                </button>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="header-custom-no-left-margin">
+                <button (click)="navigateToStructuredOutputParser()"
+                    [ngClass]="isStructuredOutputParserActive? 'btn btn-secondary' : 'btn btn-primary'">
+                    StructuredOutputParser
+                </button>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="header-custom-no-left-margin">
+                <button (click)="navigateToPydanticOutputParser()"
+                    [ngClass]="isPydanticOutputParserActive? 'btn btn-secondary' : 'btn btn-primary'">
+                    PydanticOutputParser
+                </button>
+            </div>
+        </div>
+
+    </div>
+</div>

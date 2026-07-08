@@ -1,0 +1,45 @@
+<div class="container-fluid pane-bg-color">
+    <form [formGroup]="userCommentForm">
+        <div class="row custom-row-pad">
+            <div class="col-md-2 inline-elements">
+                <div class="icon-container input-div">
+                    <mat-icon class="custom-color-mat-icon" matTooltip="query" matTooltipPosition="right"
+                        aria-label="Information icon">info</mat-icon>
+                </div>
+                <label for="user_comment">User Comment:</label>
+            </div>
+            <div class="col-md-10">
+                <textarea id="user_comment" formControlName="user_comment" rows="4" cols="50" class="form-control border border-dark"
+                    [class.is-invalid]="userCommentForm.controls['user_comment']?.invalid && userCommentForm.controls['user_comment']?.touched"></textarea>
+                <small [class.d-none]="userCommentForm.controls['user_comment']?.valid || userCommentForm.controls['user_comment']?.untouched"
+                    class="text-danger">Mandatory</small>
+            </div>
+        </div>
+    </form>
+    <div class="row custom-row-pad">
+        <div class="col-md-4 offset-md-8">
+            <button type="button" class="btn btn-primary" [disabled]="userCommentForm.invalid" (click)="doSubmitReview()">
+                Submit Review Comment
+            </button>
+        </div>
+    </div>
+    <form [formGroup]="reviewResponseForm">
+        <div class="row custom-row-pad">
+            <div class="col-md-2 inline-elements">
+                <div class="icon-container input-div">
+                    <mat-icon class="custom-color-mat-icon" matTooltip="Response" matTooltipPosition="right"
+                        aria-label="Information icon">info</mat-icon>
+                </div>
+                <label for="response">Review Response:</label>
+            </div>
+
+            <div class="col-md-10">
+                <textarea id="response" formControlName="response" rows="8" cols="50"
+                    class="form-control border border-dark"
+                    [class.is-invalid]="reviewResponseForm.controls['response']?.invalid && reviewResponseForm.controls['response']?.touched"></textarea>
+
+            </div>
+        </div>
+    </form>
+
+</div>

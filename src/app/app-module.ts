@@ -9,6 +9,8 @@ import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http'
 import { EmbeddingModelsModule } from './embedding-models/embedding-models-module';
 import { ChatbotModule } from './chatbot/chatbot-module';
 import { DynamicPromptsModule } from './dynamic-prompts/dynamic-prompts-module';
+import { StructuredOutputModule } from './structured-output/structured-output-module';
+import { OutputParsersModule } from './output-parsers/output-parsers-module';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { DynamicPromptsModule } from './dynamic-prompts/dynamic-prompts-module';
     ModelInteractionModule,
     EmbeddingModelsModule,
     DynamicPromptsModule,
-    ChatbotModule
+    ChatbotModule,
+    StructuredOutputModule,
+    OutputParsersModule
   ],
   providers: [
     provideBrowserGlobalErrorListeners(),
