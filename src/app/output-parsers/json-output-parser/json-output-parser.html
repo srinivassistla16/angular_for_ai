@@ -1,1 +1,49 @@
-<p>json-output-parser works!</p>
+<div class="container-fluid pane-bg-color">
+    <div class="row custom-row-pad">
+        <div style="display: flex; justify-content: center; align-items: center; border: 1px solid black;">
+            <h6>Exercise: To Generate the content in the JSON format using JsonOutputParser</h6>
+        </div>
+    </div>
+    <form [formGroup]="detailsForm">
+        <div class="row custom-row-pad">
+            <div class="col-md-8 inline-elements">
+                <div class="icon-container input-div">
+                    <mat-icon class="custom-color-mat-icon" matTooltip="Generate Detailed Report"
+                        matTooltipPosition="right" aria-label="Information icon">info</mat-icon>
+                </div>
+                <label for="topicForDetails">Write cause, effect and precautions in JSON format for a natural disaster :</label>
+            </div>
+            <div class="col-md-2">
+                <input type="text" formControlName="topicForDetails" class="form-control border border-dark"
+                    [class.is-invalid]="detailsForm.controls['topicForDetails']?.invalid && detailsForm.controls['topicForDetails']?.touched">
+                <small
+                    [class.d-none]="detailsForm.controls['topicForDetails']?.valid || detailsForm.controls['topicForDetails']?.untouched"
+                    class="text-danger">Mandatory</small>
+            </div>
+            <div class="col-md-2">
+                <button type="button" class="btn btn-primary" [disabled]="detailsForm.invalid"
+                    (click)="doGenerateDetails()">
+                    Generate 
+                </button>
+            </div>
+        </div>
+    </form>
+    <form [formGroup]="responseForm">
+        <div class="row custom-row-pad">
+            <div class="col-md-3 inline-elements">
+                <div class="icon-container input-div">
+                    <mat-icon class="custom-color-mat-icon" matTooltip="Vector Embedding" matTooltipPosition="right"
+                        aria-label="Information icon">info</mat-icon>
+                </div>
+                <label for="response">JSON Content:</label>
+            </div>
+
+            <div class="col-md-9">
+                <textarea id="response" formControlName="response" rows="8" cols="50"
+                    class="form-control border border-dark"
+                    [class.is-invalid]="responseForm.controls['response']?.invalid && responseForm.controls['response']?.touched"></textarea>
+
+            </div>
+        </div>
+    </form>
+</div>

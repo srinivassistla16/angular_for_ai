@@ -1,0 +1,69 @@
+<div class="container-fluid pane-bg-color">
+    <div class="row">
+        <app-document-uploader></app-document-uploader>
+    </div>
+    <div class="row custom-row-pad">
+        <div style="display: flex; justify-content: center; align-items: center; border: 1px solid black;">
+            <h6>
+                <p>Exercise: To use langchain_community TextLoader to load the text file content</p>
+                <p>Text Loader loads the whole text file content in a single Document object.</p>
+                <p>The Document object is wrapped in a list (say dacs)</p>
+                <p>docs[0].page_content and docs[0].metadata can be read</p>
+            </h6>
+        </div>
+    </div>
+    <form [formGroup]="summaryForm">
+        <div class="row custom-row-pad">
+            <div class="col-md-4 inline-elements">
+                <div class="icon-container input-div">
+                    <mat-icon class="custom-color-mat-icon" matTooltip="Text Loader File Name"
+                        matTooltipPosition="right" aria-label="Information icon">info</mat-icon>
+                </div>
+                <label for="topicForSummary">Text Loader File Name:</label>
+            </div>
+            <div class="col-md-3">
+                <input type="text" formControlName="topicForSummary" class="form-control border border-dark"
+                    [class.is-invalid]="summaryForm.controls['topicForSummary']?.invalid && summaryForm.controls['topicForSummary']?.touched">
+                <small
+                    [class.d-none]="summaryForm.controls['topicForSummary']?.valid || summaryForm.controls['topicForSummary']?.untouched"
+                    class="text-danger">Mandatory</small>
+            </div>
+            <div class="col-md-5">
+                <button type="button" class="btn btn-primary" [disabled]="summaryForm.invalid"
+                    (click)="doGenerateSummary()">
+                    Read File
+                </button>
+            </div>
+        </div>
+    </form>
+    <form [formGroup]="summaryResponseForm">
+        <div class="row custom-row-pad">
+            <div class="col-md-3 inline-elements">
+                <div class="icon-container input-div">
+                    <mat-icon class="custom-color-mat-icon" matTooltip="Vector Embedding" matTooltipPosition="right"
+                        aria-label="Information icon">info</mat-icon>
+                </div>
+                <label for="summaryResponse">File Content:</label>
+            </div>
+
+            <div class="col-md-9">
+                <textarea id="summaryResponse" formControlName="summaryResponse" rows="8" cols="50"
+                    class="form-control border border-dark"
+                    [class.is-invalid]="summaryResponseForm.controls['summaryResponse']?.invalid && summaryResponseForm.controls['summaryResponse']?.touched"></textarea>
+            </div>
+        </div>
+        <div class="row custom-row-pad">
+            <div class="col-md-3 inline-elements">
+                <div class="icon-container input-div">
+                    <mat-icon class="custom-color-mat-icon" matTooltip="Vector Embedding" matTooltipPosition="right"
+                        aria-label="Information icon">info</mat-icon>
+                </div>
+                <label for="noOfDocs">No. of Documents:</label>
+            </div>
+
+            <div class="col-md-1">
+                 <input type="text" formControlName="noOfDocs" class="form-control border border-dark" readonly="true">
+            </div>
+        </div>
+    </form>
+</div>

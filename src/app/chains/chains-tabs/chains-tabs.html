@@ -1,0 +1,34 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="header-custom">
+                <h4>Chains {{headerSubText}}</h4>
+            </div>
+        </div>
+        <div class="col-md-2">
+
+            <div class="header-custom-no-left-margin">
+                <button (click)="navigateToSequential()"
+                    [ngClass]="isSequentialActive? 'btn btn-secondary' : 'btn btn-primary'">
+                    Sequential
+                </button>
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class="header-custom-no-left-margin">
+                <button (click)="navigateToParallel()"
+                    [ngClass]="isParallelActive? 'btn btn-secondary' : 'btn btn-primary'">
+                    Parallel
+                </button>
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class="header-custom-no-left-margin">
+                <button (click)="navigateToConditional()"
+                    [ngClass]="isConditionalActive? 'btn btn-secondary' : 'btn btn-primary'">
+                    Conditional
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

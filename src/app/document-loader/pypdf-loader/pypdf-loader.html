@@ -1,0 +1,80 @@
+<div class="container-fluid pane-bg-color">
+    <div class="row">
+        <app-document-uploader></app-document-uploader>
+    </div>
+    <div class="row custom-row-pad">
+        <div style="display: flex; justify-content: center; align-items: center; border: 1px solid black;">
+            <h6>
+                <p>Exercise: To use langchain_community PyPDFLoader for loading PDF document</p>
+                <p>Each Page shall be loaded as a separate document. Thus the No. of pages you see is number of documents</p>
+                <p>Since the pages in the PDF file can be be huge, this exercise gives the chance to select a page and see the content</p>
+            </h6>
+        </div>
+    </div>
+    <form [formGroup]="summaryForm">
+        <div class="row custom-row-pad">
+            <div class="col-md-3 inline-elements">
+                <div class="icon-container input-div">
+                    <mat-icon class="custom-color-mat-icon" matTooltip="Text Loader File Name"
+                        matTooltipPosition="right" aria-label="Information icon">info</mat-icon>
+                </div>
+                <label for="topicForSummary">PDF Loader File Name:</label>
+            </div>
+            <div class="col-md-3">
+                <input type="text" formControlName="topicForSummary" class="form-control border border-dark"
+                    [class.is-invalid]="summaryForm.controls['topicForSummary']?.invalid && summaryForm.controls['topicForSummary']?.touched">
+                <small
+                    [class.d-none]="summaryForm.controls['topicForSummary']?.valid || summaryForm.controls['topicForSummary']?.untouched"
+                    class="text-danger">Mandatory</small>
+            </div>
+            <div class="col-md-2 inline-elements">
+                <div class="icon-container input-div">
+                    <mat-icon class="custom-color-mat-icon" matTooltip="Page Number"
+                        matTooltipPosition="right" aria-label="Information icon">info</mat-icon>
+                </div>
+                <label for="pageNo">Page No:</label>
+            </div>
+            <div class="col-md-1">
+                <input type="text" formControlName="pageNo" class="form-control border border-dark">
+            </div>
+
+            <div class="col-md-2">
+                <button type="button" class="btn btn-primary" [disabled]="summaryForm.invalid"
+                    (click)="doGenerateSummary()">
+                    Read File
+                </button>
+            </div>
+        </div>
+    </form>
+    <form [formGroup]="summaryResponseForm">
+        <div class="row custom-row-pad">
+            <div class="col-md-3 inline-elements">
+                <div class="icon-container input-div">
+                    <mat-icon class="custom-color-mat-icon" matTooltip="Vector Embedding" matTooltipPosition="right"
+                        aria-label="Information icon">info</mat-icon>
+                </div>
+                <label for="summaryResponse">File Content:</label>
+            </div>
+
+            <div class="col-md-9">
+                <textarea id="summaryResponse" formControlName="summaryResponse" rows="8" cols="50"
+                    class="form-control border border-dark"
+                    [class.is-invalid]="summaryResponseForm.controls['summaryResponse']?.invalid && summaryResponseForm.controls['summaryResponse']?.touched"></textarea>
+            </div>
+        </div>
+        <div class="row custom-row-pad">
+            <div class="col-md-3 inline-elements">
+                <div class="icon-container input-div">
+                    <mat-icon class="custom-color-mat-icon" matTooltip="Vector Embedding" matTooltipPosition="right"
+                        aria-label="Information icon">info</mat-icon>
+                </div>
+                <label for="noOfDocs">No. of Documents:</label>
+            </div>
+
+            <div class="col-md-1">
+                 <input type="text" formControlName="noOfDocs" class="form-control border border-dark" readonly="true">
+            </div>
+        </div>
+
+    </form>
+</div>

@@ -15,6 +15,18 @@ import { StringOutputParser } from './output-parsers/string-output-parser/string
 import { JsonOutputParser } from './output-parsers/json-output-parser/json-output-parser';
 import { StructuredOutputParser } from './output-parsers/structured-output-parser/structured-output-parser';
 import { PydanticOutputParser } from './output-parsers/pydantic-output-parser/pydantic-output-parser';
+import { ChainsMain } from './chains/chains-main/chains-main';
+import { SequentialChain } from './chains/sequential-chain/sequential-chain';
+import { ParallelChain } from './chains/parallel-chain/parallel-chain';
+import { ConditionalChain } from './chains/conditional-chain/conditional-chain';
+import { DocumentLoaderMain } from './document-loader/document-loader-main/document-loader-main';
+import { TextLoader } from './document-loader/text-loader/text-loader';
+import { PypdfLoader } from './document-loader/pypdf-loader/pypdf-loader';
+import { WebbaseLoader } from './document-loader/webbase-loader/webbase-loader';
+import { CsvLoader } from './document-loader/csv-loader/csv-loader';
+import { DirectoryLoader } from './document-loader/directory-loader/directory-loader';
+import { TextSplitterMain } from './text-splitter/text-splitter-main/text-splitter-main';
+import { RecursiveCharTextSplitter } from './text-splitter/recursive-char-text-splitter/recursive-char-text-splitter';
 
 const routes: Routes = [
   { path: '', redirectTo: "/models-main", pathMatch: 'full' },
@@ -55,6 +67,32 @@ const routes: Routes = [
       { path: 'json-output-parser', component: JsonOutputParser },
       { path: 'structured-output-parser', component: StructuredOutputParser },
       { path: 'pydantic-output-parser', component: PydanticOutputParser }
+    ]
+  },
+{
+    path: 'chains-main', component: ChainsMain, title: 'Chains Main',
+    children: [
+      { path: 'sequential-chain', component: SequentialChain },
+      { path: 'parallel-chain', component: ParallelChain },
+      { path: 'conditional-chain', component: ConditionalChain }
+     
+    ]
+  },
+  {
+    path: 'document-loader-main', component: DocumentLoaderMain, title: 'Document Loader Main',
+    children: [
+      { path: 'text-loader', component: TextLoader },
+      { path: 'pypdf-loader', component: PypdfLoader },
+      { path: 'directory-loader', component: DirectoryLoader },
+      { path: 'webbase-loader', component: WebbaseLoader },
+      { path: 'csv-loader', component: CsvLoader }
+    ]
+  },
+  {
+    path: 'text-splitter-main', component: TextSplitterMain, title: 'Text Splitter Main',
+    children: [
+      { path: 'recursive-char-text-splitter', component: RecursiveCharTextSplitter }
+
     ]
   }
 ];

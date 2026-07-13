@@ -13,7 +13,7 @@ import { ParserModel } from '../../models/output_parsers_model';
 export class StringOutputParser {
 constructor(private outputParsersService : OutputParsersService) {  }
 
-    fb = inject(FormBuilder)
+  fb = inject(FormBuilder)
   detailsForm = this.fb.group(
     {
       topicForDetails: ['', [Validators.required]],

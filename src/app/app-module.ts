@@ -11,6 +11,9 @@ import { ChatbotModule } from './chatbot/chatbot-module';
 import { DynamicPromptsModule } from './dynamic-prompts/dynamic-prompts-module';
 import { StructuredOutputModule } from './structured-output/structured-output-module';
 import { OutputParsersModule } from './output-parsers/output-parsers-module';
+import { ChainsModule } from './chains/chains-module';
+import { DocumentLoaderModule } from './document-loader/document-loader-module';
+import { TextSplitterModule } from './text-splitter/text-splitter-module';
 
 @NgModule({
   declarations: [
@@ -25,7 +28,10 @@ import { OutputParsersModule } from './output-parsers/output-parsers-module';
     DynamicPromptsModule,
     ChatbotModule,
     StructuredOutputModule,
-    OutputParsersModule
+    OutputParsersModule,
+    ChainsModule,
+    DocumentLoaderModule,
+    TextSplitterModule
   ],
   providers: [
     provideBrowserGlobalErrorListeners(),

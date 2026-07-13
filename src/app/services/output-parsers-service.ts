@@ -16,7 +16,15 @@ export class OutputParsersService {
   }
 
   doGetSummaryFromParser(parserModel: ParserModel): Observable<any> {
-    console.log("AAAAAAAAA "+ JSON.stringify(parserModel));
     return this.http.post<any>(this.apiUrl + "/outputparsers/stroutputparser/summary", parserModel);
   }
+
+  doGetDetailsFromJsonParser(parserModel: ParserModel): Observable<any> {
+    return this.http.post<any>(this.apiUrl + "/outputparsers/jsonoutputparser/detail", parserModel);
+  }
+
+    doSentimentAnalysisWithPydanticParser(parserModel: ParserModel): Observable<any> {
+    return this.http.post<any>(this.apiUrl + "/outputparsers/pydanticoutputparser/sentiment", parserModel);
+  }
+
 }

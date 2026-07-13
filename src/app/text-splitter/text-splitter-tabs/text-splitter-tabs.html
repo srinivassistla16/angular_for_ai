@@ -1,0 +1,17 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            <div class="header-custom">
+                <h4>Text Splitter {{headerSubText}}</h4>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="header-custom-no-left-margin">
+                <button (click)="navigateToRecursiveCharTextSplitter()"
+                    [ngClass]="isRecursiveCharTextSplitterActive? 'btn btn-secondary' : 'btn btn-primary'">
+                    Recursive Character Text Splitter
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

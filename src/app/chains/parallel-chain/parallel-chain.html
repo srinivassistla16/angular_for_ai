@@ -1,0 +1,55 @@
+<div class="container-fluid pane-bg-color">
+    <div class="row custom-row-pad">
+        <div style="display: flex; justify-content: center; align-items: center; border: 1px solid black;">
+            <h6> 
+                <p>Step 1. Generate  a detailed info on a topic</p>
+                <p>Step 2.a. Send the content obtained from Step 1 to a model to generate summary</p>
+                <p>Step 2.b. Send the content obtained from Step 1 to a model to generate quiz and answers</p>
+                <p>Step 3. Merge the content from 2.a amd 2.b. in a model </p>
+                <p>Step 4. Send the merged content a parser </p>
+            </h6>
+        </div>
+    </div>
+       <form [formGroup]="summaryForm">
+        <div class="row custom-row-pad">
+            <div class="col-md-5 inline-elements">
+                <div class="icon-container input-div">
+                    <mat-icon class="custom-color-mat-icon" matTooltip="Input for Summary Generation"
+                        matTooltipPosition="right" aria-label="Information icon">info</mat-icon>
+                </div>
+                <label for="topicForSummary">Topic (Step 1 Input):</label>
+            </div>
+            <div class="col-md-2">
+                <input type="text" formControlName="topicForSummary" class="form-control border border-dark"
+                    [class.is-invalid]="summaryForm.controls['topicForSummary']?.invalid && summaryForm.controls['topicForSummary']?.touched">
+                <small
+                    [class.d-none]="summaryForm.controls['topicForSummary']?.valid || summaryForm.controls['topicForSummary']?.untouched"
+                    class="text-danger">Mandatory</small>
+            </div>
+            <div class="col-md-5">
+                <button type="button" class="btn btn-primary" [disabled]="summaryForm.invalid"
+                    (click)="doGenerateSummary()">
+                    Generate Summary
+                </button>
+            </div>
+        </div>
+    </form>
+    <form [formGroup]="summaryResponseForm">
+        <div class="row custom-row-pad">
+            <div class="col-md-3 inline-elements">
+                <div class="icon-container input-div">
+                    <mat-icon class="custom-color-mat-icon" matTooltip="Vector Embedding" matTooltipPosition="right"
+                        aria-label="Information icon">info</mat-icon>
+                </div>
+                <label for="summaryResponse">Summary:</label>
+            </div>
+
+            <div class="col-md-9">
+                <textarea id="summaryResponse" formControlName="summaryResponse" rows="8" cols="50"
+                    class="form-control border border-dark"
+                    [class.is-invalid]="summaryResponseForm.controls['summaryResponse']?.invalid && summaryResponseForm.controls['summaryResponse']?.touched"></textarea>
+
+            </div>
+        </div>
+    </form>
+</div>

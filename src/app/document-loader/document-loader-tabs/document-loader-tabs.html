@@ -1,0 +1,51 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h4>Document Loaders {{headerSubText}}</h4>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-2">
+            <div class="header-custom-no-left-margin">
+                <button (click)="navigateToTextLoader()"
+                    [ngClass]="isTextLoaderActive? 'btn btn-secondary' : 'btn btn-primary'">
+                    TextLoader
+                </button>
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class="header-custom-no-left-margin">
+                <button (click)="navigateToPyPDFLoader()"
+                    [ngClass]="isPyPDFLoaderActive? 'btn btn-secondary' : 'btn btn-primary'">
+                    PyPDFLoader
+                </button>
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class="header-custom-no-left-margin">
+                <button (click)="navigateToDirectoryLoader()"
+                    [ngClass]="isDirectoryLoaderActive? 'btn btn-secondary' : 'btn btn-primary'">
+                    DirectoryLoader
+                </button>
+            </div>
+        </div>
+
+        <div class="col-md-2">
+            <div class="header-custom-no-left-margin">
+                <button (click)="navigateToWebBaseLoader()"
+                    [ngClass]="isWebBaseLoaderActive? 'btn btn-secondary' : 'btn btn-primary'">
+                    WebBaseLoader
+                </button>
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class="header-custom-no-left-margin">
+                <button (click)="navigateToCSVLoader()"
+                    [ngClass]="isCSVLoaderActive? 'btn btn-secondary' : 'btn btn-primary'">
+                    CSVLoader
+                </button>
+            </div>
+        </div>
+
+    </div>
+</div>

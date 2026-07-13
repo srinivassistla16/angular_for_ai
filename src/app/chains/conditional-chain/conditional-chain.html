@@ -1,0 +1,70 @@
+<div class="container-fluid pane-bg-color">
+    <div class="row custom-row-pad">
+        <div style="display: flex; justify-content: center; align-items: center; border: 1px solid black;">
+            <h6>
+                <p>A precise POSITIVE/ NEGATIVE sentiment analysis using Pydantic Parser.</p>
+                <p> final_chain = chain | branch_chain - Two chains are piped in this use case</p>
+                <p> First Chain generates the sentiment POSITIVE or NEGATIVE</p>
+                <p> branch_chain is a conditional chain. </p>
+                <p>If sentiment == POSITIVE - it invoves one sub-chain say positive_sub_chain</p>
+                <p>If sentiment == NEGATIVE - it invoves one sub-chain  say positive_sub_chain</p>
+                <p> The outcome of the sub-chain shall be displayed in the bottom text area</p>
+
+            </h6>
+        </div>
+    </div>
+    <form [formGroup]="queryForm">
+        <div class="row custom-row-pad">
+            <div class="col-md-3 inline-elements">
+                <div class="icon-container input-div">
+                    <mat-icon class="custom-color-mat-icon" matTooltip="Statement for Embeddding"
+                        matTooltipPosition="right" aria-label="Information icon">info</mat-icon>
+                </div>
+                <label for="query">Analysis Statement:</label>
+            </div>
+            <div class="col-md-9">
+                <input type="text" formControlName="query" class="form-control border border-dark"
+                    [class.is-invalid]="queryForm.controls['query']?.invalid && queryForm.controls['query']?.touched">
+                <small [class.d-none]="queryForm.controls['query']?.valid || queryForm.controls['query']?.untouched"
+                    class="text-danger">Mandatory</small>
+            </div>
+        </div>
+    </form>
+    <div class="row custom-row-pad">
+        <div class="col-md-3 offset-md-9">
+            <button type="button" class="btn btn-primary" [disabled]="queryForm.invalid" (click)="doSubmitQuery()">
+                Analyze Sentiment
+            </button>
+        </div>
+    </div>
+    <form [formGroup]="responseForm">
+        <div class="row custom-row-pad">
+            <div class="col-md-5 inline-elements">
+                <div class="icon-container input-div">
+                    <mat-icon class="custom-color-mat-icon" matTooltip="Vector Embedding" matTooltipPosition="right"
+                        aria-label="Information icon">info</mat-icon>
+                </div>
+                <label for="response">Sentiment Classification:</label>
+            </div>
+            <div class="col-md-7">
+                <textarea id="response" formControlName="response" rows="2" cols="30"
+                    class="form-control border border-dark"
+                    [class.is-invalid]="responseForm.controls['response']?.invalid && responseForm.controls['response']?.touched"></textarea>
+            </div>
+        </div>
+        <div class="row custom-row-pad">
+            <div class="col-md-5 inline-elements">
+                <div class="icon-container input-div">
+                    <mat-icon class="custom-color-mat-icon" matTooltip="Vector Embedding" matTooltipPosition="right"
+                        aria-label="Information icon">info</mat-icon>
+                </div>
+                <label for="airesponse">AI Respone:</label>
+            </div>
+            <div class="col-md-7">
+                <textarea id="airesponse" formControlName="airesponse" rows="6" cols="30"
+                    class="form-control border border-dark"
+                    [class.is-invalid]="responseForm.controls['airesponse']?.invalid && responseForm.controls['airesponse']?.touched"></textarea>
+            </div>
+        </div>
+    </form>
+</div>

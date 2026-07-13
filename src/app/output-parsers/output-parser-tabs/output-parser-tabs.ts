@@ -36,7 +36,7 @@ export class OutputParserTabs {
       this.isStructuredOutputParserActive = false;
       this.isPydanticOutputParserActive = false;
       this.headerSubText = "- JsonOutputParser",
-      this.router.navigate(['/output-parsers-main/string-output-parser'], { relativeTo: this.route});
+      this.router.navigate(['/output-parsers-main/json-output-parser'], { relativeTo: this.route});
     }
   }
 
@@ -47,7 +47,7 @@ export class OutputParserTabs {
       this.isStructuredOutputParserActive = true;
       this.isPydanticOutputParserActive = false;
     this.headerSubText = "- StructuredOutputParser",
-      this.router.navigate(['/output-parsers-main/string-output-parser'], { relativeTo: this.route});
+      this.router.navigate(['/output-parsers-main/structured-output-parser'], { relativeTo: this.route});
     }
   }
 
@@ -58,7 +58,7 @@ export class OutputParserTabs {
       this.isStructuredOutputParserActive = false;
       this.isPydanticOutputParserActive = true;
       this.headerSubText = "- PydanticOutputParser",
-      this.router.navigate(['/output-parsers-main/string-output-parser'], { relativeTo: this.route});
+      this.router.navigate(['/output-parsers-main/pydantic-output-parser'], { relativeTo: this.route});
     }
   }
 

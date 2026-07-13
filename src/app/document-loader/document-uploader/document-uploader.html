@@ -1,0 +1,52 @@
+<div class="container-fluid pane-bg-color">
+    <div class="row  custom-row-pad">
+        <form [formGroup]="fileUploadForm">
+
+            <div class="row custom-row-pad">
+                <div class="col-md-3 inline-elements">
+                    <div class="icon-container input-div">
+                        <mat-icon class="custom-color-mat-icon" matTooltip="File To Process" matTooltipPosition="right"
+                            aria-label="Information icon">info</mat-icon>
+                    </div>
+                    <label for="file">File To Process:</label>
+                </div>
+
+                <div class="col-md-5">
+                    <input class="form-control" type="file" id="formFile" formControlName="formFile"
+                        (change)="onFileSelected($event)">
+                </div>
+
+                <div class="col-md-4">
+                    <div *ngIf="fileToUpload != null">
+                        <button type="button" class="btn btn-primary" (click)="uploadFile()">
+                            Import Data
+                        </button>
+                    </div>
+                    <div *ngIf="fileToUpload == null">
+                        <button type="button" class="btn btn-secondary">
+                            Import Data
+                        </button>
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="row custom-row-pad">
+                <div class="col-md-3 inline-elements">
+                    <div class="icon-container input-div">
+                        <mat-icon class="custom-color-mat-icon" matTooltip="Generate Detailed Report"
+                            matTooltipPosition="right" aria-label="Information icon">info</mat-icon>
+                    </div>
+                    <label for="fileNameDisplayOnly">File Name:</label>
+                </div>
+
+                <div class="col-md-5">
+                    <input type="text" formControlName="fileNameDisplayOnly" class="form-control border border-dark" readonly="true">
+                </div>
+
+            </div>
+
+        </form>
+
+    </div>
+</div>
