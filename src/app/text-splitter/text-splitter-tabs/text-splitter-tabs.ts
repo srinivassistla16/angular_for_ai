@@ -18,7 +18,7 @@ constructor(private router: Router, private route: ActivatedRoute) { }
  navigateToRecursiveCharTextSplitter() {
     if (!this.isRecursiveCharTextSplitterActive) {
       this.isRecursiveCharTextSplitterActive = true;
-      this.headerSubText = "- Recursiver",
+      this.headerSubText = "- Recursive",
       this.router.navigate(['/text-splitter-main/recursive-char-text-splitter'], { relativeTo: this.route});
     }
   }

@@ -1,0 +1,45 @@
+<div class="container-fluid pane-bg-color">
+    <form [formGroup]="similarityForm">
+        <div class="row custom-row-pad">
+            <div class="col-md-3 inline-elements">
+                <div class="icon-container input-div">
+                    <mat-icon class="custom-color-mat-icon" matTooltip="Sentence for Similarity"
+                        matTooltipPosition="right" aria-label="Information icon">info</mat-icon>
+                </div>
+                <label for="query">Sentence:</label>
+            </div>
+            <div class="col-md-9">
+                <input type="text" formControlName="sentence" class="form-control border border-dark"
+                    [class.is-invalid]="similarityForm.controls['sentence']?.invalid && similarityForm.controls['sentence']?.touched">
+                <small
+                    [class.d-none]="similarityForm.controls['sentence']?.valid || similarityForm.controls['sentence']?.untouched"
+                    class="text-danger">Mandatory</small>
+            </div>
+        </div>
+    </form>
+    <div class="row custom-row-pad">
+        <div class="col-md-3 offset-md-9">
+            <button type="button" class="btn btn-primary" [disabled]="similarityForm.invalid" (click)="getCosines()">
+                Search
+            </button>
+        </div>
+    </div>
+    <form [formGroup]="similarityResponseForm">
+        <div class="row custom-row-pad">
+            <div class="col-md-3 inline-elements">
+                <div class="icon-container input-div">
+                    <mat-icon class="custom-color-mat-icon" matTooltip="Cosine Similarity" matTooltipPosition="right"
+                        aria-label="Information icon">info</mat-icon>
+                </div>
+                <label for="query">imilarity Search:</label>
+            </div>
+            <div class="col-md-9">
+                <input type="text" formControlName="similarity" class="form-control border border-dark"
+                    [class.is-invalid]="similarityResponseForm.controls['similarity']?.invalid && similarityResponseForm.controls['similarity']?.touched">
+                <small
+                    [class.d-none]="similarityResponseForm.controls['similarity']?.valid || similarityResponseForm.controls['similarity']?.untouched"
+                    class="text-danger">Mandatory</small>
+            </div>
+        </div>
+    </form>
+</div>

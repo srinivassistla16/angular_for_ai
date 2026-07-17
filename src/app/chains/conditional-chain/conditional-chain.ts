@@ -3,6 +3,7 @@ import { FormBuilder, Validators } from '@angular/forms';
 import { Observable, of } from 'rxjs';
 import { ParserModel } from '../../models/output_parsers_model';
 import { OutputParsersService } from '../../services/output-parsers-service';
+import { ChainsService } from '../../services/chains-service';
 
 
 @Component({
@@ -13,7 +14,7 @@ import { OutputParsersService } from '../../services/output-parsers-service';
 })
 export class ConditionalChain {
 
-  constructor(private outputParsersService: OutputParsersService) {}
+  constructor(private chainsService: ChainsService) {}
   
   fb = inject(FormBuilder)
   queryForm = this.fb.group(
@@ -31,7 +32,7 @@ export class ConditionalChain {
 
   queryResponse$: Observable<any> | undefined = of("temp");
   doSubmitQuery() {
-    this.queryResponse$ = this.outputParsersService.doSentimentAnalysisWithPydanticParser(this.doConstructQuery());
+    this.queryResponse$ = this.chainsService.doGetSummaryFromConditionalChain(this.doConstructQuery());
 
     this.queryResponse$?.subscribe({
       next: (data: any) => {

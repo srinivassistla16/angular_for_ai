@@ -19,4 +19,8 @@ export class ChainsService {
    doGetSummaryFromParallelChain(parserModel: ParserModel): Observable<any> {
     return this.http.post<any>(this.apiUrl + "/chains/parallel/summary", parserModel);
   }
+
+    doGetSummaryFromConditionalChain(parserModel: ParserModel): Observable<any> {
+    return this.http.post<any>(this.apiUrl + "/chains/conditional/summary", parserModel);
+  }
 }

@@ -1,0 +1,34 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="header-custom">
+                <h4>Vector Store {{headerSubText}}</h4>
+            </div>
+        </div>
+        <div class="col-md-2">
+
+            <div class="header-custom-no-left-margin">
+                <button (click)="navigateToOpenAi()"
+                    [ngClass]="isOpenAiActive? 'btn btn-secondary' : 'btn btn-primary'">
+                    Open AI
+                </button>
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class="header-custom-no-left-margin">
+                <button (click)="navigateToGemini()"
+                    [ngClass]="isGeminiActive? 'btn btn-secondary' : 'btn btn-primary'" [disabled]="true">
+                    Google
+                </button>
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class="header-custom-no-left-margin">
+                <button (click)="navigateToHf()"
+                    [ngClass]="isHfActive? 'btn btn-secondary' : 'btn btn-primary'" [disabled]="true">
+                    Hugging Face
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

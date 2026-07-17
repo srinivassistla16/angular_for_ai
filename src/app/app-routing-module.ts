@@ -27,6 +27,10 @@ import { CsvLoader } from './document-loader/csv-loader/csv-loader';
 import { DirectoryLoader } from './document-loader/directory-loader/directory-loader';
 import { TextSplitterMain } from './text-splitter/text-splitter-main/text-splitter-main';
 import { RecursiveCharTextSplitter } from './text-splitter/recursive-char-text-splitter/recursive-char-text-splitter';
+import { VectorStroreMain } from './vector-store/vector-strore-main/vector-strore-main';
+import { VectorStoreChroma } from './vector-store/vector-store-chroma/vector-store-chroma';
+import { WikipediaRetriever } from './retriever/wikipedia-retriever/wikipedia-retriever';
+import { RetrieverMain } from './retriever/retriever-main/retriever-main';
 
 const routes: Routes = [
   { path: '', redirectTo: "/models-main", pathMatch: 'full' },
@@ -69,13 +73,13 @@ const routes: Routes = [
       { path: 'pydantic-output-parser', component: PydanticOutputParser }
     ]
   },
-{
+  {
     path: 'chains-main', component: ChainsMain, title: 'Chains Main',
     children: [
       { path: 'sequential-chain', component: SequentialChain },
       { path: 'parallel-chain', component: ParallelChain },
       { path: 'conditional-chain', component: ConditionalChain }
-     
+
     ]
   },
   {
@@ -93,6 +97,18 @@ const routes: Routes = [
     children: [
       { path: 'recursive-char-text-splitter', component: RecursiveCharTextSplitter }
 
+    ]
+  },
+  {
+    path: 'vector-store-main', component: VectorStroreMain, title: 'Text Splitter Main',
+    children: [
+      { path: 'chroma/:modelname', component: VectorStoreChroma }
+    ]
+  },
+  {
+    path: 'retriever-main', component: RetrieverMain, title: 'Retriever Main',
+    children: [
+      { path: 'wikipedia-retriever', component: WikipediaRetriever }
     ]
   }
 ];

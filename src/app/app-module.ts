@@ -14,6 +14,8 @@ import { OutputParsersModule } from './output-parsers/output-parsers-module';
 import { ChainsModule } from './chains/chains-module';
 import { DocumentLoaderModule } from './document-loader/document-loader-module';
 import { TextSplitterModule } from './text-splitter/text-splitter-module';
+import { VectorStoreModule } from './vector-store/vector-store-module';
+import { RetrieverModule } from './retriever/retriever-module';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,9 @@ import { TextSplitterModule } from './text-splitter/text-splitter-module';
     OutputParsersModule,
     ChainsModule,
     DocumentLoaderModule,
-    TextSplitterModule
+    TextSplitterModule,
+    VectorStoreModule,
+    RetrieverModule
   ],
   providers: [
     provideBrowserGlobalErrorListeners(),

@@ -1,0 +1,17 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            <div class="header-custom">
+                <h4>Retriever {{headerSubText}}</h4>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="header-custom-no-left-margin">
+                <button (click)="navigateToWikipediaRetriever()"
+                    [ngClass]="isWikipediaRetrieverActive? 'btn btn-secondary' : 'btn btn-primary'">
+                    Wikipedia Retriver
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,219 @@
+<div class="container-fluid pane-bg-color">
+
+    <div class="row custom-row-pad">
+        <div style="display: flex; justify-content: center; align-items: center; border: 1px solid black;">
+            <h6>Step 1: Multiple Documents Vector Embedding</h6>
+        </div>
+    </div>
+    <form [formGroup]="multiDocForm">
+        <div class="row custom-row-pad">
+            <div class="col-md-3 inline-elements">
+                <div class="icon-container input-div">
+                    <mat-icon class="custom-color-mat-icon" matTooltip="Document for Embeddding"
+                        matTooltipPosition="right" aria-label="Information icon">info</mat-icon>
+                </div>
+                <label for="doc1">Document 1:</label>
+            </div>
+            <div class="col-md-9">
+                <input type="text" formControlName="doc1" class="form-control border border-dark"
+                    [class.is-invalid]="multiDocForm.controls['doc1']?.invalid && multiDocForm.controls['doc1']?.touched">
+                <small [class.d-none]="multiDocForm.controls['doc1']?.valid || multiDocForm.controls['doc1']?.untouched"
+                    class="text-danger">Mandatory</small>
+            </div>
+        </div>
+        <div class="row custom-row-pad">
+            <div class="col-md-3 inline-elements">
+                <div class="icon-container input-div">
+                    <mat-icon class="custom-color-mat-icon" matTooltip="metadat1"
+                        matTooltipPosition="right" aria-label="Information icon">info</mat-icon>
+                </div>
+                <label for="metadata1">Metadata 1:</label>
+            </div>
+            <div class="col-md-9">
+                <input type="text" formControlName="metadata1" class="form-control border border-dark"
+                    [class.is-invalid]="multiDocForm.controls['metadata1']?.invalid && multiDocForm.controls['metadata1']?.touched">
+                <small [class.d-none]="multiDocForm.controls['metadata1']?.valid || multiDocForm.controls['metadata1']?.untouched"
+                    class="text-danger">Mandatory</small>
+            </div>
+        </div>
+        <div class="row custom-row-pad">
+            <div class="col-md-3 inline-elements">
+                <div class="icon-container input-div">
+                    <mat-icon class="custom-color-mat-icon" matTooltip="Document for Embeddding"
+                        matTooltipPosition="right" aria-label="Information icon">info</mat-icon>
+                </div>
+                <label for="doc2">Document 2:</label>
+            </div>
+            <div class="col-md-9">
+                <input type="text" formControlName="doc2" class="form-control border border-dark"
+                    [class.is-invalid]="multiDocForm.controls['doc2']?.invalid && multiDocForm.controls['doc2']?.touched">
+                <small [class.d-none]="multiDocForm.controls['doc2']?.valid || multiDocForm.controls['doc2']?.untouched"
+                    class="text-danger">Mandatory</small>
+            </div>
+        </div>
+        <div class="row custom-row-pad">
+            <div class="col-md-3 inline-elements">
+                <div class="icon-container input-div">
+                    <mat-icon class="custom-color-mat-icon" matTooltip="Document for Embeddding"
+                        matTooltipPosition="right" aria-label="Information icon">info</mat-icon>
+                </div>
+                <label for="metadata2">Metadata 2:</label>
+            </div>
+            <div class="col-md-9">
+                <input type="text" formControlName="metadata2" class="form-control border border-dark"
+                    [class.is-invalid]="multiDocForm.controls['metadata2']?.invalid && multiDocForm.controls['metadata2']?.touched">
+                <small [class.d-none]="multiDocForm.controls['metadata2']?.valid || multiDocForm.controls['metadata2']?.untouched"
+                    class="text-danger">Mandatory</small>
+            </div>
+        </div>
+        <div class="row custom-row-pad">
+            <div class="col-md-3 inline-elements">
+                <div class="icon-container input-div">
+                    <mat-icon class="custom-color-mat-icon" matTooltip="Document for Embeddding"
+                        matTooltipPosition="right" aria-label="Information icon">info</mat-icon>
+                </div>
+                <label for="doc3">Document 3:</label>
+            </div>
+            <div class="col-md-9">
+                <input type="text" formControlName="doc3" class="form-control border border-dark"
+                    [class.is-invalid]="multiDocForm.controls['doc3']?.invalid && multiDocForm.controls['doc3']?.touched">
+                <small [class.d-none]="multiDocForm.controls['doc3']?.valid || multiDocForm.controls['doc3']?.untouched"
+                    class="text-danger">Mandatory</small>
+            </div>
+        </div>
+        <div class="row custom-row-pad">
+            <div class="col-md-3 inline-elements">
+                <div class="icon-container input-div">
+                    <mat-icon class="custom-color-mat-icon" matTooltip="Document for Embeddding"
+                        matTooltipPosition="right" aria-label="Information icon">info</mat-icon>
+                </div>
+                <label for="metadata3">Metedata 3:</label>
+            </div>
+            <div class="col-md-9">
+                <input type="text" formControlName="metadata3" class="form-control border border-dark"
+                    [class.is-invalid]="multiDocForm.controls['metadata3']?.invalid && multiDocForm.controls['metadata3']?.touched">
+                <small [class.d-none]="multiDocForm.controls['metadata3']?.valid || multiDocForm.controls['metadata3']?.untouched"
+                    class="text-danger">Mandatory</small>
+            </div>
+        </div>
+        <div class="row custom-row-pad">
+            <div class="col-md-3 inline-elements">
+                <div class="icon-container input-div">
+                    <mat-icon class="custom-color-mat-icon" matTooltip="Document for Embeddding"
+                        matTooltipPosition="right" aria-label="Information icon">info</mat-icon>
+                </div>
+                <label for="doc4">Document 4:</label>
+            </div>
+            <div class="col-md-9">
+                <input type="text" formControlName="doc4" class="form-control border border-dark"
+                    [class.is-invalid]="multiDocForm.controls['doc4']?.invalid && multiDocForm.controls['doc4']?.touched">
+                <small [class.d-none]="multiDocForm.controls['doc4']?.valid || multiDocForm.controls['doc4']?.untouched"
+                    class="text-danger">Mandatory</small>
+            </div>
+        </div>
+        <div class="row custom-row-pad">
+            <div class="col-md-3 inline-elements">
+                <div class="icon-container input-div">
+                    <mat-icon class="custom-color-mat-icon" matTooltip="Document for Embeddding"
+                        matTooltipPosition="right" aria-label="Information icon">info</mat-icon>
+                </div>
+                <label for="metadata4">Metadata 4:</label>
+            </div>
+            <div class="col-md-9">
+                <input type="text" formControlName="metadata4" class="form-control border border-dark"
+                    [class.is-invalid]="multiDocForm.controls['metadata4']?.invalid && multiDocForm.controls['metadata4']?.touched">
+                <small [class.d-none]="multiDocForm.controls['metadata4']?.valid || multiDocForm.controls['metadata4']?.untouched"
+                    class="text-danger">Mandatory</small>
+            </div>
+        </div>
+    </form>
+    <div class="row custom-row-pad">
+        <div class="col-md-3 offset-md-9">
+            <button type="button" class="btn btn-primary" [disabled]="multiDocForm.invalid" (click)="doSubmitDocs()">
+                Store in Vector Store
+            </button>
+        </div>
+    </div>
+    <form [formGroup]="embedmentResponseForm">
+        <div class="row custom-row-pad">
+            <div class="col-md-3 inline-elements">
+                <div class="icon-container input-div">
+                    <mat-icon class="custom-color-mat-icon" matTooltip="Vector Embedding" matTooltipPosition="right"
+                        aria-label="Information icon">info</mat-icon>
+                </div>
+                <label for="response">Vector Store GET:</label>
+            </div>
+
+            <div class="col-md-9">
+                <textarea id="embedment" formControlName="embedment" rows="8" cols="50"
+                    class="form-control border border-dark"
+                    [class.is-invalid]="embedmentResponseForm.controls['embedment']?.invalid && embedmentResponseForm.controls['embedment']?.touched"></textarea>
+
+            </div>
+        </div>
+    </form>
+    <div class="row custom-row-pad">
+        <div style="display: flex; justify-content: center; align-items: center; border: 1px solid black;">
+            <h6>Section 3:  vector_store.similarity_search is very simpler way to get the document object with symantec similarity</h6>
+        </div>
+    </div>
+    <form [formGroup]="similarityForm">
+        <div class="row custom-row-pad">
+            <div class="col-md-3 inline-elements">
+                <div class="icon-container input-div">
+                    <mat-icon class="custom-color-mat-icon" matTooltip="Sentence for Similarity"
+                        matTooltipPosition="right" aria-label="Information icon">info</mat-icon>
+                </div>
+                <label for="query">Sentence:</label>
+            </div>
+            <div class="col-md-9">
+                <input type="text" formControlName="sentence" class="form-control border border-dark"
+                    [class.is-invalid]="similarityForm.controls['sentence']?.invalid && similarityForm.controls['sentence']?.touched">
+                <small
+                    [class.d-none]="similarityForm.controls['sentence']?.valid || similarityForm.controls['sentence']?.untouched"
+                    class="text-danger">Mandatory</small>
+            </div>
+        </div>
+    </form>
+    <div class="row custom-row-pad">
+        <div class="col-md-3 offset-md-9">
+            <button type="button" class="btn btn-primary" [disabled]="similarityForm.invalid" (click)="getCosines()">
+                Search
+            </button>
+        </div>
+    </div>
+    <form [formGroup]="similarityResponseForm">
+        <div class="row custom-row-pad">
+            <div class="col-md-3 inline-elements">
+                <div class="icon-container input-div">
+                    <mat-icon class="custom-color-mat-icon" matTooltip="Cosine Similarity" matTooltipPosition="right"
+                        aria-label="Information icon">info</mat-icon>
+                </div>
+                <label for="query">imilarity Search:</label>
+            </div>
+            <div class="col-md-9">
+                <input type="text" formControlName="similarity" class="form-control border border-dark"
+                    [class.is-invalid]="similarityResponseForm.controls['similarity']?.invalid && similarityResponseForm.controls['similarity']?.touched">
+                <small
+                    [class.d-none]="similarityResponseForm.controls['similarity']?.valid || similarityResponseForm.controls['similarity']?.untouched"
+                    class="text-danger">Mandatory</small>
+            </div>
+        </div>
+        <div class="row custom-row-pad">
+            <div class="col-md-3 inline-elements">
+                <div class="icon-container input-div">
+                    <mat-icon class="custom-color-mat-icon" matTooltip="Similarity With Score" matTooltipPosition="right"
+                        aria-label="Information icon">info</mat-icon>
+                </div>
+                <label for="query">Similarity & Score:</label>
+            </div>
+            <div class="col-md-9">
+                <input type="text" formControlName="similarityWithScore" class="form-control border border-dark"
+                    [class.is-invalid]="similarityResponseForm.controls['similarityWithScore']?.invalid && similarityResponseForm.controls['similarityWithScore']?.touched">
+                <small
+                    [class.d-none]="similarityResponseForm.controls['similarityWithScore']?.valid || similarityResponseForm.controls['similarityWithScore']?.untouched"
+                    class="text-danger">Mandatory</small>
+            </div>
+        </div>
+    </form>
+</div>
