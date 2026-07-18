@@ -5,30 +5,23 @@
                 <h4>Simple Chatbot {{headerSubText}}</h4>
             </div>
         </div>
-        <div class="col-md-2">
+        <div class="col-md-3">
 
             <div class="header-custom-no-left-margin">
-                <button (click)="navigateToOpenAi()"
-                    [ngClass]="isOpenAiActive? 'btn btn-secondary' : 'btn btn-primary'" [disabled]="true">
-                    Open AI
+                <button (click)="navigateToLangGraph()"
+                    [ngClass]="isLangGraphActive? 'btn btn-secondary' : 'btn btn-primary'">
+                    LangGraph
                 </button>
             </div>
         </div>
-        <div class="col-md-2">
+        <div class="col-md-3">
             <div class="header-custom-no-left-margin">
-                <button (click)="navigateToGemini()"
-                    [ngClass]="isGeminiActive? 'btn btn-secondary' : 'btn btn-primary'">
-                    Google
+                <button (click)="navigateToLangChain()"
+                    [ngClass]="isLangChainActive? 'btn btn-secondary' : 'btn btn-primary'">
+                    LangChain
                 </button>
             </div>
         </div>
-        <div class="col-md-2">
-            <div class="header-custom-no-left-margin">
-                <button (click)="navigateToHf()"
-                    [ngClass]="isHfActive? 'btn btn-secondary' : 'btn btn-primary'" [disabled]="true" >
-                    Hugging Face
-                </button>
-            </div>
-        </div>
+ 
     </div>
 </div>

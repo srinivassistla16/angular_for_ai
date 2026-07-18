@@ -11,8 +11,8 @@ export class RetrieverService {
   private apiUrl = '/api';
   constructor(private http: HttpClient) { }
 
-retrieveFromWikipedia(simpleQuery: SimpleQuery): Observable<any> {
-  return this.http.post<any>(this.apiUrl + "/retriever/wikipediaretriever", simpleQuery);
-}
-  
+  retrieveFromWikipedia(simpleQuery: SimpleQuery): Observable<any> {
+    return this.http.post<any>(this.apiUrl + "/retriever/wikipediaretriever", simpleQuery);
+  }
+
 }

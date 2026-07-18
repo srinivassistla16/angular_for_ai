@@ -31,11 +31,11 @@
                     <mat-icon class="custom-color-mat-icon" matTooltip="Cosine Similarity" matTooltipPosition="right"
                         aria-label="Information icon">info</mat-icon>
                 </div>
-                <label for="query">imilarity Search:</label>
+                <label for="query">Similarity Search:</label>
             </div>
-            <div class="col-md-9">
-                <input type="text" formControlName="similarity" class="form-control border border-dark"
-                    [class.is-invalid]="similarityResponseForm.controls['similarity']?.invalid && similarityResponseForm.controls['similarity']?.touched">
+            <div class="col-md-9"><textarea id="similarity" formControlName="similarity" rows="10" cols="30"
+                    class="form-control border border-dark"
+                    [class.is-invalid]="similarityResponseForm.controls['similarity']?.invalid && similarityResponseForm.controls['similarity']?.touched"></textarea>
                 <small
                     [class.d-none]="similarityResponseForm.controls['similarity']?.valid || similarityResponseForm.controls['similarity']?.untouched"
                     class="text-danger">Mandatory</small>
