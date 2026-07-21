@@ -16,6 +16,9 @@ import { DocumentLoaderModule } from './document-loader/document-loader-module';
 import { TextSplitterModule } from './text-splitter/text-splitter-module';
 import { VectorStoreModule } from './vector-store/vector-store-module';
 import { RetrieverModule } from './retriever/retriever-module';
+import { BuiltInToolsModule } from './built-in-tools/built-in-tools-module';
+import { CustomToolsModule } from './custom-tools/custom-tools-module';
+import { ToolCallingModule } from './tool-calling/tool-calling-module';
 
 @NgModule({
   declarations: [
@@ -35,7 +38,10 @@ import { RetrieverModule } from './retriever/retriever-module';
     DocumentLoaderModule,
     TextSplitterModule,
     VectorStoreModule,
-    RetrieverModule
+    RetrieverModule,
+    BuiltInToolsModule,
+    CustomToolsModule,
+    ToolCallingModule
   ],
   providers: [
     provideBrowserGlobalErrorListeners(),

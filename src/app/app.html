@@ -1,95 +1,115 @@
 <div class="body outer" id="top">
   <app-header></app-header>
-    <div class="body inner">
-      <div class="sidebar content">
-        <div class="logo-details">
-          <div class="logo_name">Gen AI Project</div>
-          <i class="bx bx-menu" id="btn"></i>
-        </div>
-        <ul class="nav-list">
-          <li>
-            <a routerLink="/models-main">
-              <i class='bx  bx-home'></i>
-              <span class="links_name">Models Home</span>
-            </a>
-            <span class="tooltip">Models Home</span>
-          </li>
-          <li>
-            <a routerLink="/embeddings-main">
-              <i class="bx bx-folder"></i>
-              <span class="links_name">Embedding Models</span>
-            </a>
-            <span class="tooltip">Embedding Models</span>
-          </li>
-          <li>
-            <a routerLink="/prompts-main">
-              <i class="bx bx-file"></i>
-              <span class="links_name">Prompting</span>
-            </a>
-            <span class="tooltip">Prompting</span>
-          </li>
-          <li>
-            <a routerLink="/chatbot-main">
-              <i class="bx bx-group"></i>
-              <span class="links_name">Simple Chatbot</span>
-            </a>
-            <span class="tooltip">Simple Chatbot</span>
-          </li>
-
-          <li>
-            <a routerLink="/structured-output-main">
-              <i class="bx bx-purchase-tag"></i>
-              <span class="links_name">Structured Output</span>
-            </a>
-            <span class="tooltip">Structured Output</span>
-          </li>
-          <li>
-            <a routerLink="/output-parsers-main">
-              <i class="bx bxs-quote-alt-left"></i>
-              <span class="links_name">Output Parsers</span>
-            </a>
-            <span class="tooltip">Output Parsers</span>
-          </li>
-          <li>
-            <a routerLink="/chains-main">
-              <i class="bx bxs-quote-alt-right"></i>
-              <span class="links_name">Chains</span>
-            </a>
-            <span class="tooltip">Chains</span>
-          </li>
-          <li>
-            <a routerLink="/document-loader-main">
-              <i class="bx bx-math"></i>
-              <span class="links_name">Document Loader</span>
-            </a>
-            <span class="tooltip">Document Loader</span>
-          </li>
-          <li>
-            <a routerLink="/text-splitter-main">
-              <i class="bx bx-shopping-bag"></i>
-              <span class="links_name">Text Splitter</span>
-            </a>
-            <span class="tooltip">Text Splitter</span>
-          </li>
-          <li>
-            <a routerLink="/vector-store-main">
-              <i class="bx bx-folder"></i>
-              <span class="links_name">Vector Store</span>
-            </a>
-            <span class="tooltip">Vector Store</span>
-          </li>
-          <li>
-            <a routerLink="/retriever-main">
-              <i class="bx bx-purchase-tag"></i>
-              <span class="links_name">Retriever</span>
-            </a>
-            <span class="tooltip">Retriever</span>
-          </li>
-        </ul>
+  <div class="body inner">
+    <div class="sidebar content">
+      <div class="logo-details">
+        <div class="logo_name">Gen AI Project</div>
+        <i class="bx bx-menu" id="btn"></i>
       </div>
-      <section
-       class="home-section pane-bg-color">
-        <router-outlet></router-outlet>
-      </section>
+      <ul class="nav-list">
+        <li>
+          <a routerLink="/models-main">
+            <i class='bx  bx-home'></i>
+            <span class="links_name">Models Home</span>
+          </a>
+          <span class="tooltip">Models Home</span>
+        </li>
+        <li>
+          <a routerLink="/embeddings-main">
+            <i class="bx bx-folder"></i>
+            <span class="links_name">Embedding Models</span>
+          </a>
+          <span class="tooltip">Embedding Models</span>
+        </li>
+        <li>
+          <a routerLink="/prompts-main">
+            <i class="bx bx-file"></i>
+            <span class="links_name">Prompting</span>
+          </a>
+          <span class="tooltip">Prompting</span>
+        </li>
+        <li>
+          <a routerLink="/chatbot-main">
+            <i class="bx bx-group"></i>
+            <span class="links_name">Simple Chatbot</span>
+          </a>
+          <span class="tooltip">Simple Chatbot</span>
+        </li>
+
+        <li>
+          <a routerLink="/structured-output-main">
+            <i class="bx bx-purchase-tag"></i>
+            <span class="links_name">Structured Output</span>
+          </a>
+          <span class="tooltip">Structured Output</span>
+        </li>
+        <li>
+          <a routerLink="/output-parsers-main">
+            <i class="bx bxs-quote-alt-left"></i>
+            <span class="links_name">Output Parsers</span>
+          </a>
+          <span class="tooltip">Output Parsers</span>
+        </li>
+        <li>
+          <a routerLink="/chains-main">
+            <i class="bx bxs-quote-alt-right"></i>
+            <span class="links_name">Chains</span>
+          </a>
+          <span class="tooltip">Chains</span>
+        </li>
+        <li>
+          <a routerLink="/document-loader-main">
+            <i class="bx bx-math"></i>
+            <span class="links_name">Document Loader</span>
+          </a>
+          <span class="tooltip">Document Loader</span>
+        </li>
+        <li>
+          <a routerLink="/text-splitter-main">
+            <i class="bx bx-shopping-bag"></i>
+            <span class="links_name">Text Splitter</span>
+          </a>
+          <span class="tooltip">Text Splitter</span>
+        </li>
+        <li>
+          <a routerLink="/vector-store-main">
+            <i class="bx bx-folder"></i>
+            <span class="links_name">Vector Store</span>
+          </a>
+          <span class="tooltip">Vector Store</span>
+        </li>
+        <li>
+          <a routerLink="/retriever-main">
+            <i class="bx bx-purchase-tag"></i>
+            <span class="links_name">Retriever</span>
+          </a>
+          <span class="tooltip">Retriever</span>
+        </li>
+        <li>
+          <a routerLink="/built-in-tools-main">
+            <i class="bx bxs-quote-alt-right"></i>
+            <span class="links_name">Tools - BuiltIn</span>
+          </a>
+          <span class="tooltip">Tools Built In</span>
+        </li>
+        <li>
+          <a routerLink="/custom-tools-main">
+            <i class="bx bxs-quote-alt-left"></i>
+            <span class="links_name">Tools - Custom</span>
+          </a>
+          <span class="tooltip">Tools Custom</span>
+        </li>
+        <li>
+          <a routerLink="/tool-calling-main">
+            <i class="bx bx-group"></i>
+            <span class="links_name">Tool Calling Basic</span>
+          </a>
+          <span class="tooltip">Tool Calling - Basic</span>
+        </li>
+      </ul>
     </div>
+    <section class="home-section pane-bg-color">
+      <router-outlet></router-outlet>
+    </section>
+  </div>
 </div>

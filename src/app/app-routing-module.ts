@@ -31,6 +31,10 @@ import { VectorStroreMain } from './vector-store/vector-strore-main/vector-stror
 import { VectorStoreChroma } from './vector-store/vector-store-chroma/vector-store-chroma';
 import { WikipediaRetriever } from './retriever/wikipedia-retriever/wikipedia-retriever';
 import { RetrieverMain } from './retriever/retriever-main/retriever-main';
+import { BuiltInToolsMain } from './built-in-tools/built-in-tools-main/built-in-tools-main';
+import { CustomToolsMain } from './custom-tools/custom-tools-main/custom-tools-main';
+import { CommonCustomTool } from './custom-tools/common-custom-tool/common-custom-tool';
+import { ToolCallingMain } from './tool-calling/tool-calling-main/tool-calling-main';
 
 const routes: Routes = [
   { path: '', redirectTo: "/models-main", pathMatch: 'full' },
@@ -110,11 +114,26 @@ const routes: Routes = [
     children: [
       { path: 'wikipedia-retriever', component: WikipediaRetriever }
     ]
-  }
+  },
+  {
+    path: 'built-in-tools-main', component: BuiltInToolsMain, title: 'Built In Tools Main'
+  },
+  {
+    path: 'custom-tools-main', component: CustomToolsMain, title: 'Custom Tools',
+    children: [
+      { path: 'common-tool/:modeOfTool', component: CommonCustomTool }
+    ]
+  },
+  {
+    path: 'tool-calling-main', component: ToolCallingMain, title: 'Tool Calling'
+   }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [
+    RouterModule.forRoot(routes, {
+      scrollPositionRestoration: 'top' // Scrolls to x=0, y=0 on all navigation
+    })],
   exports: [RouterModule]
 })
 export class AppRoutingModule {
