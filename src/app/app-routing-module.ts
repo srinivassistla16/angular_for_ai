@@ -35,6 +35,7 @@ import { BuiltInToolsMain } from './built-in-tools/built-in-tools-main/built-in-
 import { CustomToolsMain } from './custom-tools/custom-tools-main/custom-tools-main';
 import { CommonCustomTool } from './custom-tools/common-custom-tool/common-custom-tool';
 import { ToolCallingMain } from './tool-calling/tool-calling-main/tool-calling-main';
+import { ToolCallingMultiplier } from './tool-calling/tool-calling-multiplier/tool-calling-multiplier';
 
 const routes: Routes = [
   { path: '', redirectTo: "/models-main", pathMatch: 'full' },
@@ -125,8 +126,11 @@ const routes: Routes = [
     ]
   },
   {
-    path: 'tool-calling-main', component: ToolCallingMain, title: 'Tool Calling'
-   }
+    path: 'tool-calling-main', component: ToolCallingMain, title: 'Tool Calling',
+    children: [
+      { path: 'tool-calling-multiplier', component: ToolCallingMultiplier }
+    ]
+  }
 ];
 
 @NgModule({

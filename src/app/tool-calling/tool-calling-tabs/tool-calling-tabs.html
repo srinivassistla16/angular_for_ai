@@ -1,1 +1,17 @@
-<p>tool-calling-tabs works!</p>
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            <div class="header-custom">
+                <h4>Tool Calling {{headerSubText}}</h4>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="header-custom-no-left-margin">
+                <button (click)="navigateToMultiplierToolCall()"
+                    [ngClass]="isMultiplierToolCallActive? 'btn btn-secondary' : 'btn btn-primary'">
+                    Multiplier Tool Call
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
