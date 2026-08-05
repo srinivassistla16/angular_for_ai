@@ -14,5 +14,7 @@ export class ToolCallingService {
 multiplyToolCall(simpleQuery: SimpleQuery): Observable<any> {
   return this.http.post<any>(this.apiUrl + "/toolcallingbasic/multiplier", simpleQuery);
 }
-  
+currencyConversionToolCall(simpleQuery: SimpleQuery): Observable<any> {
+  return this.http.post<any>(this.apiUrl + "/toolcallingcomplex/currencyconversion", simpleQuery);
+}
 }

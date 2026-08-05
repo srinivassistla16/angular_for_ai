@@ -1,0 +1,57 @@
+<div class="container-fluid pane-bg-color">
+    <form [formGroup]="queryForm">
+        <div class="row custom-row-pad">
+            <div class="col-md-3 inline-elements">
+                <div class="icon-container input-div">
+                    <mat-icon class="custom-color-mat-icon" matTooltip="Statement for Embeddding"
+                        matTooltipPosition="right" aria-label="Information icon">info</mat-icon>
+                </div>
+                <label for="query">Tool Question:</label>
+            </div>
+            <div class="col-md-9">
+                <input type="text" formControlName="query" class="form-control border border-dark"
+                    [class.is-invalid]="queryForm.controls['query']?.invalid && queryForm.controls['query']?.touched">
+                <small [class.d-none]="queryForm.controls['query']?.valid || queryForm.controls['query']?.untouched"
+                    class="text-danger">Mandatory</small>
+            </div>
+        </div>
+    </form>
+    <div class="row custom-row-pad">
+        <div class="col-md-3 offset-md-9">
+            <button type="button" class="btn btn-primary" [disabled]="queryForm.invalid" (click)="doSubmitQuery()">
+                Make a Tool Call
+            </button>
+        </div>
+    </div>
+    <form [formGroup]="responseForm">
+            <div class="row custom-row-pad">
+            <div class="col-md-3 inline-elements">
+                <div class="icon-container input-div">
+                    <mat-icon class="custom-color-mat-icon" matTooltip="Statement for Embeddding"
+                        matTooltipPosition="right" aria-label="Information icon">info</mat-icon>
+                </div>
+                <label for="answer">Answer:</label>
+            </div>
+            <div class="col-md-9">
+                <input type="text" formControlName="answer" class="form-control border border-dark"
+                    [class.is-invalid]="responseForm.controls['answer']?.invalid && responseForm.controls['answer']?.touched">
+                <small [class.d-none]="responseForm.controls['answer']?.valid || responseForm.controls['answer']?.untouched"
+                    class="text-danger">Mandatory</small>
+            </div>
+        </div>
+        <div class="row custom-row-pad">
+            <div class="col-md-3 inline-elements">
+                <div class="icon-container input-div">
+                    <mat-icon class="custom-color-mat-icon" matTooltip="All Messages" matTooltipPosition="right"
+                        aria-label="Information icon">info</mat-icon>
+                </div>
+                <label for="messages">Messages:</label>
+            </div>
+
+            <div class="col-md-9">
+                <textarea id="messages" formControlName="messages" rows="10" cols="50"
+                    class="form-control border border-dark"></textarea>
+            </div>
+        </div>
+    </form>
+</div>

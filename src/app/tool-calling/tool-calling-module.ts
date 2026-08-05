@@ -8,6 +8,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { ToolCallingMain } from './tool-calling-main/tool-calling-main';
 import { ToolCallingTabs } from './tool-calling-tabs/tool-calling-tabs';
 import { ToolCallingMultiplier } from './tool-calling-multiplier/tool-calling-multiplier';
+import { ToolCallingCurrencyConversion } from './tool-calling-currency-conversion/tool-calling-currency-conversion';
 
 
 
@@ -15,7 +16,8 @@ import { ToolCallingMultiplier } from './tool-calling-multiplier/tool-calling-mu
   declarations: [
     ToolCallingMain,
     ToolCallingTabs,
-    ToolCallingMultiplier
+    ToolCallingMultiplier,
+    ToolCallingCurrencyConversion
   ],
   imports: [
     CommonModule,

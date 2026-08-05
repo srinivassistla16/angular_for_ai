@@ -13,12 +13,23 @@ constructor(private router: Router, private route: ActivatedRoute) { }
   headerSubText = "";
 
   isMultiplierToolCallActive = false;
+  isCurrencyConversionToolCallActive = false;
 
  navigateToMultiplierToolCall() {
     if (!this.isMultiplierToolCallActive) {
       this.isMultiplierToolCallActive = true;
+      this.isCurrencyConversionToolCallActive = false;
       this.headerSubText = "- Mulitiplier",
       this.router.navigate(['/tool-calling-main/tool-calling-multiplier'], { relativeTo: this.route});
+    }
+  }
+
+ navigateToCurrencyConversionToolCall() {
+    if (!this.isCurrencyConversionToolCallActive) {
+      this.isMultiplierToolCallActive = false;
+      this.isCurrencyConversionToolCallActive = true;
+      this.headerSubText = "- Currency Conversion";
+      this.router.navigate(['/tool-calling-main/tool-calling-currency-conversion'], { relativeTo: this.route});
     }
   }
 }
